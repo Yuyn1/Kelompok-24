@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - JadwalKu</title>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Hubungkan ke CSS Khusus Dashboard -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- SIDEBAR KIRI -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">📅</div>
+                <span class="brand-name">JadwalKu</span>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li><a href="#" class="menu-item active" data-target="section-ringkasan"><span class="icon">📁</span> Ringkasan</a></li>
+                <li><a href="#" class="menu-item" data-target="section-kalender"><span class="icon">📅</span> Kalender</a></li>
+                <li><a href="#" class="menu-item" data-target="section-agenda"><span class="icon">📋</span> Daftar Agenda</a></li>
+                <li><a href="#" class="menu-item" data-target="section-notifikasi"><span class="icon">🔔</span> Notifikasi</a></li>
+            </ul>
+
+            <div class="sidebar-section-title">FILTER SEMESTER</div>
+            <div class="sidebar-filter">
+                <select class="semester-select">
+                    <option>Semester 5</option>
+                    <option>Semester 4</option>
+                    <option>Semester 3</option>
+                </select>
+            </div>
+
+            <div class="sidebar-section-title">KATEGORI</div>
+            <ul class="category-list">
+                <li><span class="dot purple"></span> Perkuliahan <span class="count">6</span></li>
+                <li><span class="dot blue"></span> Organisasi <span class="count">3</span></li>
+                <li><span class="dot green"></span> Tugas & Ujian <span class="count">4</span></li>
+            </ul>
+
+            <!-- Tombol Logout di Bawah Sidebar -->
+            <div style="padding: 0 8px; margin-top: auto;">
+                <button id="btnLogout" class="btn-logout-sidebar">🚪 Keluar (Logout)</button>
+            </div>
+
+            <div class="sidebar-conflict-box" style="margin-top: 12px;">
+                <div class="conflict-icon">✨</div>
+                <div class="conflict-title">Deteksi bentrok aktif</div>
+                <div class="conflict-desc">JadwalKu memeriksa setiap agenda sebelum disimpan.</div>
+            </div>
+        </aside>
+
+        <!-- KONTEN UTAMA -->
+        <main class="main-content">
+            <!-- TOP NAVBAR -->
+            <header class="top-navbar">
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Cari agenda atau mata kuliah..." class="search-input">
+                </div>
+                <div class="user-nav-actions">
+                    <button class="notif-btn" id="btnNotifQuick">🔔</button>
+                    <div class="user-profile">
+                        <div class="user-avatar" id="userAvatar">AN</div>
+                        <div class="user-info">
+                            <div class="user-name" id="userNameDisplay">Alya Nirmala</div>
+                            <div class="user-role">Teknik Informatika</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- CONTAINER KONTEN DINAMIS -->
+            <div class="dashboard-body">
+
+                <!-- 1. HALAMAN RINGKASAN -->
+                <div id="section-ringkasan" class="content-section active-section">
+                    <div class="welcome-banner">
+                        <div>
+                            <div class="welcome-sub">SELAMAT PAGI, <span id="greetingName">ALYA</span></div>
+                            <h1>Jadwal akademik Anda</h1>
+                            <p>Pantau agenda dan jaga setiap komitmen tetap selaras.</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn-outline">📥 Impor Kalender</button>
+                            <button class="btn-primary" id="openModalBtn">＋ Tambah Jadwal</button>
+                        </div>
+                    </div>
+
+                    <!-- STATS CARDS ROW -->
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-icon purple-bg">📅</div>
+                            <div class="stat-info">
+                                <div class="stat-num">8</div>
+                                <div class="stat-label">Agenda bulan ini</div>
+                            </div>
+                            <div class="stat-badge purple-text">4 minggu ini</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon green-bg">📋</div>
+                            <div class="stat-info">
+                                <div class="stat-num">4</div>
+                                <div class="stat-label">Tugas mendekat</div>
+                            </div>
+                            <div class="stat-badge green-text">2 prioritas</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon orange-bg">⚡</div>
+                            <div class="stat-info">
+                                <div class="stat-num">2 hari</div>
+                                <div class="stat-label">Jadwal padat</div>
+                            </div>
+                            <div class="stat-badge orange-text">Rab & Jum</div>
+                        </div>
+                    </div>
+
+                    <!-- MAIN GRID (KALENDER BULANAN + SIDEBAR KANAN) -->
+                    <div class="calendar-layout-grid">
+                        <div class="calendar-card-main">
+                            <div class="cal-main-header">
+                                <div class="month-navigation">
+                                    <button class="nav-arrow">‹</button>
+                                    <h2>Oktober 2026</h2>
+                                    <button class="nav-arrow">›</button>
+                                </div>
+                                <div class="cal-view-switches">
+                                    <button class="view-btn">Hari ini</button>
+                                    <button class="view-btn active">Bulan</button>
+                                </div>
+                            </div>
+                            <!-- Tabel Kalender Sederhana -->
+                            <table class="monthly-table">
+                                <thead>
+                                    <tr><th>Sen</th><th>Sel</th><th>Rab</th><th>Kam</th><th>Jum</th><th>Sab</th><th>Min</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="date-num">29</span></td><td><span class="date-num">30</span></td><td><span class="date-num">1</span></td>
+                                        <td><span class="date-num">2</span><div class="event-pill purple-pill">Pemrograman<br><small>08.00</small></div></td>
+                                        <td><span class="date-num">3</span></td><td><span class="date-num">4</span><div class="event-pill purple-pill">Rapat BEM<br><small>15.30</small></div></td><td><span class="date-num">5</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="date-num">6</span></td><td><span class="date-num">7</span></td>
+                                        <td><span class="date-num">8</span><div class="event-pill blue-pill">Basis Data<br><small>10.00</small></div></td>
+                                        <td><span class="date-num">9</span></td><td><span class="date-num">10</span><div class="event-pill green-pill">Deadline Tugas<br><small>23.59</small></div></td><td><span class="date-num">11</span></td><td><span class="date-num">12</span></td>
+                                    </tr>
+                                    <tr class="current-week-row">
+                                        <td><span class="date-num">13</span></td>
+                                        <td><span class="date-num today-circle">14</span><div class="event-pill blue-pill">Pemrograman<br><small>08.00</small></div></td>
+                                        <td><span class="date-num">15</span></td>
+                                        <td><span class="date-num">16</span><div class="event-pill orange-pill">Presentasi<br><small>09.00</small></div></td>
+                                        <td><span class="date-num">17</span></td><td><span class="date-num">18</span><div class="event-pill purple-pill">Rapat BEM<br><small>15.30</small></div></td><td><span class="date-num">19</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Sidebar Kanan -->
+                        <div class="right-sidebar-panel">
+                            <div class="upcoming-header">
+                                <h3>Agenda terdekat</h3>
+                                <span class="badge-count">3 agenda</span>
+                            </div>
+                            <div class="upcoming-item">
+                                <div class="up-date">14 OKT<br><small>08.00</small></div>
+                                <div class="up-details">
+                                    <div class="up-title">Mata Kuliah Pemrograman Web</div>
+                                    <div class="up-location">Ruang Lab 3.2</div>
+                                </div>
+                            </div>
+                            <div class="upcoming-item">
+                                <div class="up-date">14 OKT<br><small>15.30</small></div>
+                                <div class="up-details">
+                                    <div class="up-title">Rapat Organisasi BEM</div>
+                                    <div class="up-location">Sekretariat BEM</div>
+                                </div>
+                            </div>
+                            <div class="ai-suggestion-box">
+                                <div class="ai-title">✨ Saran JadwalKu</div>
+                                <div class="ai-desc">Kamis pagi masih kosong. Cocok untuk fokus mengerjakan Tugas Akhir.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. HALAMAN KALENDER PENUH -->
+                <div id="section-kalender" class="content-section" style="display: none;">
+                    <h2>Kalender Akademik Bulanan</h2>
+                    <p style="color: #64748B; margin-bottom: 20px;">Tampilan penuh kalender interaktif seluruh agenda kuliah dan organisasi.</p>
+                    <div class="calendar-card-main">
+                        <p style="padding: 40px; text-align: center; color: #64748B;">[ Tampilan Kalender Interaktif Penuh Bulan Oktober 2026 ]</p>
+                    </div>
+                </div>
+
+                <!-- 3. HALAMAN DAFTAR AGENDA (CRUD) -->
+                <div id="section-agenda" class="content-section" style="display: none;">
+                    <div class="welcome-banner">
+                        <div>
+                            <h2>Daftar Seluruh Agenda</h2>
+                            <p>Kelola, edit, atau hapus daftar kegiatan kuliah dan tugasmu.</p>
+                        </div>
+                        <button class="btn-primary" id="openModalBtn2">＋ Tambah Agenda Baru</button>
+                    </div>
+                    <div class="calendar-card-main" style="margin-top: 20px;">
+                        <table class="monthly-table" style="text-align: left;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid #E2E8F0;">
+                                    <th style="padding: 12px;">Tanggal</th>
+                                    <th>Nama Agenda</th>
+                                    <th>Kategori</th>
+                                    <th>Waktu & Keterangan</th>
+                                    <th style="text-align: center;">Aksi</th> <!-- Dibuat rata tengah -->
+                                </tr>
+                            </thead>
+                            <tbody id="agendaTableBody">
+                                <!-- Data berdasarkan kalender Oktober 2026 -->
+                                <tr>
+                                    <td style="padding: 12px;">2 Okt 2026</td>
+                                    <td><strong>Pemrograman</strong></td>
+                                    <td><span class="event-pill purple-pill" style="display:inline-block;">Perkuliahan</span></td>
+                                    <td>08.00 - Ruang Kelas 1.1</td>
+                                    <td style="text-align: center;"><button class="btn-delete">🗑️ Hapus</button></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px;">4 Okt 2026</td>
+                                    <td><strong>Rapat BEM</strong></td>
+                                    <td><span class="event-pill purple-pill" style="display:inline-block;">Organisasi</span></td>
+                                    <td>15.30 - Ruang Rapat Ormawa</td>
+                                    <td style="text-align: center;"><button class="btn-delete">🗑️ Hapus</button></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px;">8 Okt 2026</td>
+                                    <td><strong>Basis Data</strong></td>
+                                    <td><span class="event-pill blue-pill" style="display:inline-block;">Perkuliahan</span></td>
+                                    <td>10.00 - Ruang Lab 2.1</td>
+                                    <td style="text-align: center;"><button class="btn-delete">🗑️ Hapus</button></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px;">10 Okt 2026</td>
+                                    <td><strong>Deadline Tugas</strong></td>
+                                    <td><span class="event-pill green-pill" style="display:inline-block;">Tugas & Ujian</span></td>
+                                    <td>23.59 - Portal E-Learning</td>
+                                    <td style="text-align: center;"><button class="btn-delete">🗑️ Hapus</button></td>
+                                </tr>
+                                
+                                <!-- DUA AGENDA PADA TANGGAL 14 OKTOBER -->
+                                <tr>
+                                    <td style="padding: 12px;">14 Okt 2026</td>
+                                    <td><strong>Mata Kuliah Pemrograman Web</strong></td>
+                                    <td><span class="event-pill blue-pill" style="display:inline-block;">Perkuliahan</span></td>
+                                    <td>08.00 - Ruang Lab 3.2</td>
+                                    <td style="text-align: center;"><button class="btn-delete">🗑️ Hapus</button></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px;">14 Okt 2026</td>
+                                    <td><strong>Rapat Organisasi BEM</strong></td>
+                                    <td><span class="event-pill purple-pill" style="display:inline-block;">Organisasi</span></td>
+                                    <td>15.30 - Sekretariat BEM</td>
+                                    <td style="text-align: center;"><button class="btn-delete">🗑️ Hapus</button></td>
+                                </tr>
+                                <!-- ===================================== -->
+
+                                <tr>
+                                    <td style="padding: 12px;">16 Okt 2026</td>
+                                    <td><strong>Presentasi</strong></td>
+                                    <td><span class="event-pill orange-pill" style="display:inline-block;">Tugas & Ujian</span></td>
+                                    <td>09.00 - Ruang Seminar A</td>
+                                    <td style="text-align: center;"><button class="btn-delete">🗑️ Hapus</button></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px;">18 Okt 2026</td>
+                                    <td><strong>Rapat BEM</strong></td>
+                                    <td><span class="event-pill purple-pill" style="display:inline-block;">Organisasi</span></td>
+                                    <td>15.30 - Sekretariat BEM</td>
+                                    <td style="text-align: center;"><button class="btn-delete">🗑️ Hapus</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 4. HALAMAN NOTIFIKASI -->
+                <div id="section-notifikasi" class="content-section" style="display: none;">
+                    <h2>Pusat Notifikasi & Peringatan</h2>
+                    <p style="color: #64748B; margin-bottom: 20px;">Riwayat pengingat jadwal dan deteksi konflik sistem.</p>
+                    
+                    <div class="calendar-card-main" style="display: flex; flex-direction: column; gap: 12px; padding: 24px;">
+                        
+                        <!-- Notifikasi Merah -->
+                        <div class="notif-card" style="display: flex; align-items: flex-start; justify-content: space-between; padding: 12px; background: #FEF2F2; border: 1px solid #FCA5A5; border-radius: 8px;">
+                            <div style="display: flex; gap: 14px;">
+                                <span style="font-size: 18px;">⚠️</span>
+                                <div>
+                                    <div style="font-weight: 600; color: #991B1B; font-size: 13px;">Peringatan Bentrok Jadwal</div>
+                                    <div style="font-size: 12px; color: #B91C1C;">Rapat BEM (15.30) berdekatan dengan jam praktikum laboratorium.</div>
+                                </div>
+                            </div>
+                            <button class="btn-close-notif" style="color: #991B1B;" title="Tutup">✖</button>
+                        </div>
+
+                        <!-- Notifikasi Biru -->
+                        <div class="notif-card" style="display: flex; align-items: flex-start; justify-content: space-between; padding: 12px; background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px;">
+                            <div style="display: flex; gap: 14px;">
+                                <span style="font-size: 18px;">🔔</span>
+                                <div>
+                                    <div style="font-weight: 600; color: #1E40AF; font-size: 13px;">Pengingat Tugas</div>
+                                    <div style="font-size: 12px; color: #1E3A8A;">Deadline Tugas Akhir jatuh tempo pada 16 Oktober 2026 pukul 23.59.</div>
+                                </div>
+                            </div>
+                            <button class="btn-close-notif" style="color: #1E40AF;" title="Tutup">✖</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL POPUP TAMBAH JADWAL -->
+    <div id="modalTambah" class="modal-overlay" style="display: none;">
+        <div class="modal-card">
+            <h3 style="margin-bottom: 16px;">Tambah Agenda Baru</h3>
+            <form id="formTambahAgenda">
+                <div style="margin-bottom: 12px;">
+                    <label style="font-size: 12px; font-weight: 600; display: block; margin-bottom: 4px;">Nama Agenda / Kuliah</label>
+                    <input type="text" id="inputNamaAgenda" class="search-input" style="width: 100%;" placeholder="Contoh: Kuliah Jaringan Komputer" required>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <label style="font-size: 12px; font-weight: 600; display: block; margin-bottom: 4px;">Kategori</label>
+                    <select id="inputKategori" class="semester-select" style="background: #FFF; color: #0F172A; border: 1px solid #CBD5E1;">
+                        <option value="Perkuliahan">Perkuliahan</option>
+                        <option value="Organisasi">Organisasi</option>
+                        <option value="Tugas & Ujian">Tugas & Ujian</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <label style="font-size: 12px; font-weight: 600; display: block; margin-bottom: 4px;">Tanggal & Waktu</label>
+                    <input type="text" id="inputWaktu" class="search-input" style="width: 100%;" placeholder="Contoh: 15 Okt 2026, 13.00" required>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="font-size: 12px; font-weight: 600; display: block; margin-bottom: 4px;">Lokasi / Keterangan</label>
+                    <input type="text" id="inputLokasi" class="search-input" style="width: 100%;" placeholder="Contoh: Ruang Teori 2" required>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" id="closeModalBtn" class="btn-outline">Batal</button>
+                    <button type="submit" class="btn-primary">Simpan Agenda</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- SCRIPT LOGIKA DASHBOARD & SPA -->
+    <script>
+        // 1. Load Nama User & Setup Sidebar Switching
+        window.addEventListener('DOMContentLoaded', () => {
+            const currentUser = localStorage.getItem('currentUser') || 'Alya Nirmala';
+            document.getElementById('userNameDisplay').textContent = currentUser;
+            document.getElementById('greetingName').textContent = currentUser.toUpperCase();
+            document.getElementById('userAvatar').textContent = currentUser.substring(0, 2).toUpperCase();
+
+            // Fitur SPA Sidebar Navigation
+            const menuItems = document.querySelectorAll('.sidebar-menu .menu-item');
+            const sections = document.querySelectorAll('.dashboard-body > div');
+
+            menuItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    menuItems.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+
+                    const targetId = item.getAttribute('data-target');
+                    sections.forEach(sec => {
+                        sec.style.display = (sec.id === targetId) ? 'block' : 'none';
+                    });
+                });
+            });
+
+            // Logout Handler
+            document.getElementById('btnLogout').addEventListener('click', () => {
+                localStorage.removeItem('currentUser');
+                window.location.href = "login.html";
+            });
+
+            // Modal Popup Handler
+            const modal = document.getElementById('modalTambah');
+            const openBtns = [document.getElementById('openModalBtn'), document.getElementById('openModalBtn2')];
+            const closeBtn = document.getElementById('closeModalBtn');
+
+            openBtns.forEach(btn => {
+                if(btn) btn.addEventListener('click', () => modal.style.display = 'flex');
+            });
+            if(closeBtn) closeBtn.addEventListener('click', () => modal.style.display = 'none');
+
+            // Tambah Agenda Form Handler
+            document.getElementById('formTambahAgenda').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const nama = document.getElementById('inputNamaAgenda').value;
+                const kat = document.getElementById('inputKategori').value;
+                const waktu = document.getElementById('inputWaktu').value;
+                const lokasi = document.getElementById('inputLokasi').value;
+
+                alert(`Agenda "${nama}" berhasil disimpan!`);
+                modal.style.display = 'none';
+                e.target.reset();
+            });
+        });
+    </script>
+</body>
+</html>
