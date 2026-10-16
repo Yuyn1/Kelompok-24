@@ -1,0 +1,320 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+/* ================= SIDEBAR KIRI (GELAP) ================= */
+.left-panel {
+    flex: 1;
+    background-color: #0F172A;
+    color: #ffffff;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    background-color: #2563EB;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.brand-name {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+}
+
+.left-content {
+    max-width: 450px;
+}
+
+.badge {
+    background-color: rgba(37, 99, 235, 0.15);
+    color: #60A5FA;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.left-content h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+
+.left-content p {
+    color: #94A3B8;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #E2E8F0;
+}
+
+.feature-icon {
+    background-color: #1E293B;
+    color: #60A5FA;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+    border: 1px solid #334155;
+}
+
+.testimonial-box {
+    background-color: #1E293B;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    max-width: 450px;
+}
+
+.testimonial-text {
+    font-size: 13px;
+    color: #CBD5E1;
+    font-style: italic;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.testimonial-author {
+    font-size: 12px;
+    color: #60A5FA;
+    font-weight: 600;
+}
+
+/* ================= KANAN (FORM LOGIN) ================= */
+.right-panel {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-header {
+    margin-bottom: 28px;
+}
+
+.login-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2563EB;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.login-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.login-card p {
+    font-size: 13px;
+    color: #64748B;
+    line-height: 1.4;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1E293B;
+    margin-bottom: 6px;
+}
+
+.input-container {
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #0F172A;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #94A3B8;
+    font-size: 14px;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 12px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #475569;
+    cursor: pointer;
+}
+
+.remember-me input {
+    cursor: pointer;
+    accent-color: #2563EB;
+    width: 14px;
+    height: 14px;
+}
+
+.forgot-password {
+    color: #2563EB;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #2563EB;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-submit:hover {
+    background-color: #1D4ED8;
+}
+
+/* Responsif untuk layar kecil/tablet */
+@media (max-width: 900px) {
+    .left-panel {
+        display: none;
+    }
+}
+
+/* ================= STYLING ERROR VALIDATION ================= */
+.error-alert {
+    background-color: #FEF2F2;
+    border: 1px solid #FCA5A5;
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.error-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.error-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #991B1B;
+    margin-bottom: 2px;
+}
+
+.error-desc {
+    font-size: 12px;
+    color: #B91C1C;
+    line-height: 1.4;
+}
+
+/* Kondisi Input saat Error */
+.form-input.error {
+    border-color: #EF4444;
+}
+
+.form-input.error:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error-helper {
+    font-size: 11px;
+    color: #EF4444;
+    margin-top: 6px;
+    display: block;
+    font-weight: 500;
+}
+

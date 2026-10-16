@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk - JadwalKu</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Menghubungkan ke file CSS terpisah -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SISI KIRI: BRANDING & FITUR -->
+    <div class="left-panel">
+        <div class="brand">
+            <div class="brand-icon">📅</div>
+            <div class="brand-name">JadwalKu</div>
+        </div>
+
+        <div class="left-content">
+            <div class="badge">✨ Kalender akademik pintar</div>
+            <h1>Kuliah lebih teratur, tanpa jadwal bertabrakan.</h1>
+            <p>Susun perkuliahan, rapat organisasi, dan tenggat tugas dalam satu kalender yang otomatis mendeteksi konflik.</p>
+
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <span>Deteksi konflik sebelum agenda disimpan</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <span>Ringkasan beban akademik mingguan</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <span>Pengingat tugas dan ujian tepat waktu</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-box">
+            <p class="testimonial-text">"JadwalKu membantu saya menghindari rapat BEM yang bersamaan dengan kelas praktikum."</p>
+            <div class="testimonial-author">Nadia • Mahasiswa Sistem Informasi</div>
+        </div>
+    </div>
+
+    <!-- SISI KANAN: FORM LOGIN -->
+    <div class="right-panel">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-subtitle">Selamat datang kembali</div>
+                <h2>Masuk ke akun mahasiswa</h2>
+                <p>Gunakan email kampus untuk melanjutkan ke kalender akademik Anda.</p>
+            </div>
+
+            <!-- Banner Error (Awalnya Disembunyikan) -->
+            <div id="errorAlert" class="error-alert" style="display: none;">
+                <div class="error-icon">⚠️</div>
+                <div>
+                    <div class="error-title">Email atau kata sandi belum tepat</div>
+                    <div class="error-desc">Periksa kembali email kampus dan kata sandi, lalu coba lagi.</div>
+                </div>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label" for="email">Email kampus</label>
+                    <input type="email" id="email" class="form-input" placeholder="Masukkan Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Kata sandi</label>
+                    <div class="input-container">
+                        <input type="password" id="password" class="form-input" placeholder="Masukkan Password" required>
+                        <button type="button" id="togglePassword" class="password-toggle">👁️</button>
+                    </div>
+                    <!-- Helper Teks Error Kecil -->
+                    <span id="passwordErrorText" class="error-helper" style="display: none;">⚠️ Kata sandi minimal 8 karakter.</span>
+                </div>
+
+                <!-- Opsi Ingat Saya & Lupa Kata Sandi -->
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember"> Ingat saya
+                    </label>
+                    <a href="#" id="forgotPasswordLink" class="forgot-password">Lupa kata sandi?</a>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <span>➔</span> Masuk ke JadwalKu
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SCRIPT UTAMA (Terhubung ke script.js) -->
+    <script src="script.js"></script>
+</body>
+</html>
