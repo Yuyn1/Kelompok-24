@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JadwalKu - Kalender Akademik Pintar Mahasiswa</title>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Hubungkan ke CSS terpisah -->
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body class="landing-body">
+
+    <!-- NAVBAR DENGAN LINK ID -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="brand-icon">📅</div>
+            <span class="brand-title">JadwalKu</span>
+        </div>
+        <div class="nav-links">
+            <a href="#beranda" id="nav-beranda" class="nav-link active">Beranda</a>
+            <a href="#fitur" id="nav-fitur" class="nav-link">Fitur</a>
+            <a href="#carakerja" id="nav-carakerja" class="nav-link">Cara Kerja</a>
+            <a href="#kampus" id="nav-kampus" class="nav-link">Untuk Kampus</a>
+        </div>
+        <div class="nav-actions">
+            <a href="login.html" class="btn-primary">Mulai Sekarang ➔</a>
+        </div>
+    </nav>
+
+    <!-- 1. SECTION BERANDA -->
+    <header id="beranda" class="hero-section">
+        <div class="hero-left">
+            <div class="hero-badge">
+                <span>✨</span> Dirancang untuk ritme mahasiswa
+            </div>
+            <h1>Jadwal kuliah rapi. Fokus belajar kembali.</h1>
+            <p class="hero-desc">JadwalKu menyatukan kalender akademik Anda dan memberi peringatan cerdas saat agenda berpotensi bertabrakan.</p>
+            
+            <div class="hero-buttons">
+                <a href="login.html" class="btn-primary btn-large">Buat Kalender Saya</a>
+                <a href="#carakerja" class="btn-outline btn-large">Lihat Cara Kerja</a>
+            </div>
+
+            <div class="hero-social-proof">
+                <div class="avatar-group">
+                    <span class="avatar" style="background-color: #2563EB;">AN</span>
+                    <span class="avatar" style="background-color: #7C3AED;">RP</span>
+                    <span class="avatar" style="background-color: #059669;">DS</span>
+                </div>
+                <span class="proof-text"><strong>2.400+ mahasiswa</strong> mengatur minggu mereka</span>
+            </div>
+        </div>
+
+        <!-- MOCKUP KALENDER MINGGUAN -->
+        <div class="hero-right">
+            <div class="calendar-preview-card">
+                <div class="calendar-header-card">
+                    <div class="cal-title">📅 Minggu ini, 12–18 Oktober</div>
+                    <div class="cal-status">✓ Tidak ada bentrok</div>
+                </div>
+
+                <div class="calendar-grid">
+                    <!-- Senin -->
+                    <div class="cal-col">
+                        <div class="day-name">SEN</div>
+                        <div class="day-num">12</div>
+                        <div class="cal-event">
+                            <div class="ev-title">Pemrograman Web</div>
+                            <div class="ev-time">08.00</div>
+                        </div>
+                        <div class="cal-event">
+                            <div class="ev-title">Basis Data</div>
+                            <div class="ev-time">13.00</div>
+                        </div>
+                    </div>
+                    <!-- Selasa -->
+                    <div class="cal-col today">
+                        <div class="day-name">SEL</div>
+                        <div class="day-num">13</div>
+                        <div class="cal-event blue-bg">
+                            <div class="ev-title">Praktikum UI/UX</div>
+                            <div class="ev-time">10.00</div>
+                        </div>
+                    </div>
+                    <!-- Rabu -->
+                    <div class="cal-col">
+                        <div class="day-name">RAB</div>
+                        <div class="day-num">14</div>
+                        <div class="cal-event">
+                            <div class="ev-title">Bimbingan TA</div>
+                            <div class="ev-time">09.00</div>
+                        </div>
+                        <div class="cal-event">
+                            <div class="ev-title">Rapat BEM</div>
+                            <div class="ev-time">15.30</div>
+                        </div>
+                    </div>
+                    <!-- Kamis -->
+                    <div class="cal-col">
+                        <div class="day-name">KAM</div>
+                        <div class="day-num">15</div>
+                        <div class="cal-event">
+                            <div class="ev-title">Sistem Cerdas</div>
+                            <div class="ev-time">08.00</div>
+                        </div>
+                    </div>
+                    <!-- Jumat -->
+                    <div class="cal-col">
+                        <div class="day-name">JUM</div>
+                        <div class="day-num">16</div>
+                        <div class="cal-event">
+                            <div class="ev-title">Kuis Jaringan</div>
+                            <div class="ev-time">13.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Alert Card -->
+                <div class="cal-footer-alert">
+                    <span>✨</span>
+                    <span>Rabu paling padat. Sisakan jeda 30 menit sebelum Rapat BEM.</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. SECTION FITUR -->
+    <section id="fitur" class="features-section">
+        <div class="section-subtitle">LEBIH TENANG SETIAP MINGGU</div>
+        <h2 class="section-title">Satu kalender untuk seluruh kehidupan kampus</h2>
+        <p class="section-note">Mulai dalam hitungan menit. Tidak perlu kartu kredit atau integrasi rumit.</p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feat-icon-box">🛡️</div>
+                <h3>Deteksi bentrok otomatis</h3>
+                <p>Dapatkan peringatan sebelum kelas, rapat, atau bimbingan saling tumpang tindih.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feat-icon-box">📅</div>
+                <h3>Semua agenda di satu tempat</h3>
+                <p>Gabungkan perkuliahan, organisasi, tugas, dan ujian dalam kalender yang mudah dipindai.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feat-icon-box">🔔</div>
+                <h3>Pengingat yang relevan</h3>
+                <p>Prioritaskan tenggat penting tanpa terganggu notifikasi yang tidak dibutuhkan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SECTION CARA KERJA -->
+    <section id="carakerja" class="features-section" style="background-color: #FFFFFF; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0;">
+        <div class="section-subtitle">LANGKAH MUDAH</div>
+        <h2 class="section-title">Bagaimana JadwalKu bekerja untuk Anda?</h2>
+        <p class="section-note">Hanya butuh 3 langkah sederhana untuk merapikan jadwal akademikmu.</p>
+
+        <div class="features-grid">
+            <!-- Kartu 1 -->
+            <div class="feature-card">
+                <!-- Ganti ikon lama dengan karakter Unicode Boxed Digit 1 ➀ -->
+                <div class="feat-icon-box" style="font-size: 24px; font-family: 'Inter', sans-serif; color: #2563EB;">➀</div>
+                <h3>Masuk dengan Email Kampus</h3>
+                <p>Gunakan akun mahasiswa yang valid untuk mengakses sistem kalender.</p>
+            </div>
+            <!-- Kartu 2 -->
+            <div class="feature-card">
+                <!-- Ganti ikon lama dengan karakter Unicode Boxed Digit 2 ➁ -->
+                <div class="feat-icon-box" style="font-size: 24px; font-family: 'Inter', sans-serif; color: #2563EB;">➁</div>
+                <h3>Sinkronisasi Jadwal</h3>
+                <p>Masukkan jadwal kuliah, tugas, atau kegiatan organisasi ke dalam sistem.</p>
+            </div>
+            <!-- Kartu 3 -->
+            <div class="feature-card">
+                <!-- Ganti ikon lama dengan karakter Unicode Boxed Digit 3 ➂ -->
+                <div class="feat-icon-box" style="font-size: 24px; font-family: 'Inter', sans-serif; color: #2563EB;">➂</div>
+                <h3>Nikmati Kuliah Tanpa Bentrok</h3>
+                <p>Sistem otomatis mendeteksi jadwal yang tumpang tindih agar kamu bisa fokus.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECTION UNTUK KAMPUS -->
+    <section id="kampus" class="features-section">
+        <div class="section-subtitle">KOLABORASI INSTITUSI</div>
+        <h2 class="section-title">Solusi khusus untuk Organisasi & Kampus</h2>
+        <p class="section-note">Bantu seluruh mahasiswa dan dosen terhubung dalam satu ekosistem jadwal terpadu.</p>
+
+        <!-- Satu Paragraf Panjang dengan Banner Elegan -->
+        <div class="features-grid">
+            <div class="feature-card" style="grid-column: span 3; text-align: center; padding: 48px 40px; background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%); border: 1px solid #E2E8F0;">
+                <p style="font-size: 16px; color: #334155; line-height: 1.7; max-width: 800px; margin: 0 auto 24px auto;">
+                    JadwalKu hadir sebagai jembatan digital yang menyelaraskan ritme akademik antara mahasiswa, dosen, dan pihak rektorat. Dengan sistem sinkronisasi kurikulum terpusat, pengumuman fakultas real-time, serta pemantauan beban studi yang transparan, institusi Anda dapat menciptakan lingkungan kampus yang lebih terstruktur, minim konflik jadwal, dan mendorong produktivitas belajar mengajar secara menyeluruh.
+                </p>
+                <a href="login.html" class="btn-primary">Hubungi Tim Kami ➔</a>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Ambil semua section dan link navbar
+        const sections = document.querySelectorAll('header[id], section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100; // Offset agar deteksi lebih pas
+                const sectionId = section.getAttribute('id');
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        // Cocokkan href dengan id section yang sedang aktif
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

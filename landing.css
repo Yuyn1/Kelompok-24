@@ -1,0 +1,409 @@
+/* ================= LANDING PAGE STYLES ================= */
+.landing-body {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    overflow-x: hidden;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-title {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    color: #0F172A;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #64748B;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #2563EB;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-login {
+    text-decoration: none;
+    color: #1E293B;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: #2563EB;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary:hover {
+    background-color: #1D4ED8;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #0F172A;
+    border: 1px solid #CBD5E1;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-outline:hover {
+    background-color: #F1F5F9;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.hero-left {
+    flex: 1;
+    max-width: 560px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #EFF6FF;
+    color: #2563EB;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid #BFDBFE;
+}
+
+.hero-left h1 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    color: #0F172A;
+    margin-bottom: 18px;
+}
+
+.hero-desc {
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 36px;
+}
+
+.btn-large {
+    padding: 12px 24px;
+    font-size: 15px;
+}
+
+.hero-social-proof {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar-group {
+    display: flex;
+}
+
+.avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FFFFFF;
+    margin-left: -8px;
+}
+
+.avatar:first-child {
+    margin-left: 0;
+}
+
+.proof-text {
+    font-size: 13px;
+    color: #64748B;
+}
+
+/* Calendar Preview Right Panel */
+.hero-right {
+    flex: 1.1;
+}
+
+/* Calendar Preview Right Panel / Kotak Utama Kalender */
+.calendar-preview-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    
+    /* --- SHADOW UTAMA YANG LEBIH TEGAS & TIMBUL --- */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.18), 0 10px 20px -5px rgba(0, 0, 0, 0.08);
+    
+    border: 1px solid #E2E8F0;
+    padding: 24px;
+}
+
+.calendar-header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.cal-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: #0F172A;
+}
+
+.cal-status {
+    background-color: #ECFDF5;
+    color: #059669;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.cal-col {
+    background-color: #F8FAFC;
+    border-radius: 8px;
+    padding: 8px;
+    min-height: 220px;
+}
+
+.day-name {
+    font-size: 10px;
+    font-weight: 700;
+    color: #94A3B8;
+    text-align: center;
+}
+
+.day-num {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0F172A;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.cal-event {
+    background-color: #FFFFFF;
+    /* Hapus border tipis agar shadow lebih bersih */
+    border: none; 
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 10px; /* Sedikit tambah jarak antar card */
+    
+    /* --- SHADOW YANG LEBIH JELAS & TEGAS --- */
+    /* Nilai blur dan spread lebih besar, warna sedikit lebih gelap */
+    box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.12), 0 4px 6px -3px rgba(0, 0, 0, 0.08);
+    
+    /* Transisi tetap halus */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efek hover yang lebih dramatis */
+.cal-event:hover {
+    transform: translateY(-3px); /* Kartu naik lebih tinggi */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.cal-event.blue-bg {
+    background-color: #EFF6FF;
+    /* Border dihilangkan juga untuk versi biru */
+    border: none;
+}
+
+.ev-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1E293B;
+    margin-bottom: 2px;
+}
+
+.ev-time {
+    font-size: 9px;
+    color: #64748B;
+}
+
+.cal-footer-alert {
+    background-color: #0F172A;
+    color: #FFFFFF;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Features Section */
+.features-section {
+    padding: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2563EB;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.section-note {
+    font-size: 13px;
+    color: #64748B;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    text-align: left;
+}
+
+.feature-card {
+    background-color: #FFFFFF;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+}
+
+.feat-icon-box {
+    width: 36px;
+    height: 36px;
+    background-color: #EFF6FF;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.feature-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0F172A;
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    font-size: 13px;
+    color: #64748B;
+    line-height: 1.5;
+}
+
+/* ================= GAYA KHUSUS HARI INI (TODAY) ================= */
+.cal-col.today {
+    background-color: #EFF6FF; /* Latar belakang biru sangat muda */
+    border: 2px solid #2563EB; /* Garis tepi biru utama yang tegas */
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15); /* Efek timbul khusus */
+}
+
+/* Mengubah warna teks nama hari dan tanggal untuk hari ini agar lebih menonjol */
+.cal-col.today .day-name {
+    color: #1D4ED8;
+    font-weight: 800;
+}
+
+.cal-col.today .day-num {
+    color: #1E40AF;
+    background-color: #2563EB;
+    color: #FFFFFF;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px auto;
+    font-size: 14px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
