@@ -1,3 +1,4 @@
+/* ================= DASHBOARD STYLES ================= */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -659,4 +660,380 @@ body {
 .btn-close-notif:hover {
     opacity: 1;
     transform: scale(1.1);
+}
+
+/* Transisi Smooth Kalender */
+#calendarTableBody {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#calendarTableBody.fade-out {
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+/* Styling Dropdown Semester Filter */
+.semester-select {
+    width: 100%;
+    background-color: #1E293B;
+    color: #F8FAFC;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.semester-select:focus {
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.semester-select option {
+    background-color: #1E293B;
+    color: #F8FAFC;
+    padding: 8px;
+}
+
+/* STYLING MODAL DETAIL AGENDA */
+.modal-detail-card {
+    max-width: 580px;
+    width: 90%;
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #FFFFFF;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.modal-detail-header {
+    background: #0F172A;
+    color: #FFFFFF;
+    padding: 24px;
+    position: relative;
+}
+
+.modal-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.badge-category {
+    background: #1E293B;
+    color: #60A5FA;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #334155;
+}
+
+.btn-close-circle {
+    background: #1E293B;
+    border: none;
+    color: #94A3B8;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-close-circle:hover {
+    background: #334155;
+    color: #FFFFFF;
+}
+
+.modal-detail-header h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #F8FAFC;
+    margin-bottom: 4px;
+}
+
+.modal-detail-header p {
+    font-size: 13px;
+    color: #94A3B8;
+    margin: 0;
+}
+
+.modal-detail-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-height: 65vh;
+    overflow-y: auto;
+}
+
+.detail-grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.detail-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.detail-box-icon {
+    font-size: 20px;
+}
+
+.detail-label {
+    font-size: 11px;
+    color: #64748B;
+    display: block;
+    font-weight: 500;
+}
+
+.detail-value {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.detail-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-top: 1px dashed #E2E8F0;
+    padding-top: 14px;
+}
+
+.detail-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.info-icon {
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.info-label {
+    font-size: 11px;
+    color: #64748B;
+    display: block;
+}
+
+.info-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1E293B;
+}
+
+.detail-note-box {
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+
+.note-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2563EB;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.detail-note-box p {
+    font-size: 12px;
+    color: #1E3A8A;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.detail-status-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+}
+
+.status-safe {
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    color: #065F46;
+}
+
+.status-warning {
+    background: #FEF2F2;
+    border: 1px solid #FCA5A5;
+    color: #991B1B;
+}
+
+.detail-status-box strong {
+    font-size: 13px;
+    display: block;
+}
+
+.detail-status-box p {
+    font-size: 11px;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.modal-detail-footer {
+    padding: 16px 24px;
+    background: #F8FAFC;
+    border-top: 1px solid #E2E8F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-ghost-danger {
+    background: transparent;
+    border: none;
+    color: #DC2626;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.btn-ghost-danger:hover {
+    background: #FEF2F2;
+}
+
+.footer-right-btns {
+    display: flex;
+    gap: 10px;
+}
+
+/* ==========================================
+   EFEK HOVER & INDIKATOR KLIK EVENT PILL
+   ========================================== */
+.event-pill {
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.2s ease, 
+                filter 0.2s ease;
+    position: relative;
+    user-select: none;
+}
+
+/* Efek saat kursor diarahkan ke event pill */
+.event-pill:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+}
+
+/* Efek saat event pill ditekan */
+.event-pill:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Indikator ikon kecil halus di sudut kanan saat di-hover */
+.event-pill::after {
+    content: "🔍";
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    font-size: 9px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.event-pill:hover::after {
+    opacity: 0.8;
+}
+
+/* ==========================================
+   ANIMASI SMOOTH MODAL POP-IN
+   ========================================== */
+@keyframes modalPopIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Terapkan animasi saat modal dimunculkan */
+.modal-overlay[style*="display: flex"] .modal-detail-card {
+    animation: modalPopIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ==========================================
+   ANIMASI SLIDE-UP MODAL DETAIL (DARI BAWAH LAYAR)
+   ========================================== */
+
+/* Mengatur overlay agar siap meluncurkan modal dari dasar layar */
+#modalDetailAgenda {
+    align-items: flex-end; /* Memosisikan modal di area bawah layar */
+    justify-content: center;
+    padding-bottom: 0;
+}
+
+/* Penyesuaian bentuk kartu saat meluncur dari bawah */
+#modalDetailAgenda .modal-detail-card {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+}
+
+/* Di layar komputer/desktop, beri sedikit jarak agar tidak menempel rapat di tepi bawah */
+@media (min-width: 640px) {
+    #modalDetailAgenda {
+        align-items: center; /* Rata tengah di komputer */
+    }
+    #modalDetailAgenda .modal-detail-card {
+        border-radius: 16px; /* Sudut melengkung penuh di desktop */
+    }
+}
+
+/* Keyframe Animasi Meluncur dari Luar Bawah Layar */
+@keyframes slideUpFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh); /* Mulai dari bawah luar layar */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Berhenti di posisi normal */
+    }
+}
+
+/* Jalankan animasi saat modal dibuka (display: flex) */
+#modalDetailAgenda[style*="display: flex"] .modal-detail-card {
+    animation: slideUpFromBottom 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Transisi Smooth Antarhalaman */
+body {
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out;
+}
+
+body.page-fade-out {
+    opacity: 0;
 }
