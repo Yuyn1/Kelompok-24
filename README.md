@@ -7,7 +7,7 @@ JadwalKu adalah prototipe website kalender akademik yang dirancang untuk membant
 - **Kelompok:** 24 Web & UI/UX Developer
 - **Desain Figma:** [Wireframe Kalender JadwalKu](https://www.figma.com/design/XNiECTvk3W9LeWSUbqYvlg/Wireframe-Kalender?t=lVJp8u6eekaHByVF-1)
 - **Repository GitHub:** [Kelompok-24](https://github.com/Yuyn1/Kelompok-24)
-- **Dokumen PRD:** *Tambahkan tautan PDF PRD di sini jika tersedia.*
+- **Dokumen PRD:** *https://drive.google.com/file/d/1HaXVHI8cV9YDi7Haax1kxE1ps2oEIc3L/view?usp=sharing*
 
 ### Anggota Kelompok
 
@@ -81,8 +81,6 @@ Proyek ini memisahkan struktur halaman, tampilan, dan interaksi ke dalam file ya
 | `login.html` | Struktur halaman login, jika nama file ini digunakan pada repository |
 | `style.css` | Styling halaman login pada struktur proyek |
 
-Nama file lain dapat dilihat langsung di repository. Pastikan nama pada tabel disesuaikan dengan file yang benar-benar ada di dalam proyek.
-
 ## Cara Menjalankan Website
 
 1. Clone atau unduh repository ini.
@@ -90,14 +88,6 @@ Nama file lain dapat dilihat langsung di repository. Pastikan nama pada tabel di
 3. Pastikan file HTML, CSS, dan JavaScript berada pada struktur folder yang benar.
 4. Jalankan halaman awal melalui browser. Untuk pengalaman pengembangan yang lebih praktis, gunakan ekstensi **Live Server** di Visual Studio Code jika tersedia.
 5. Coba navigasi halaman dan uji interaksi seperti perpindahan bulan, modal detail jadwal, form, dan konfirmasi logout.
-
-Contoh perintah untuk menyalin repository:
-
-```bash
-git clone https://github.com/Yuyn1/Kelompok-24.git
-```
-
-Kemudian buka folder hasil clone di editor kode.
 
 ## Responsivitas Mobile
 
@@ -112,8 +102,6 @@ Penyesuaian yang dilakukan meliputi:
 - **Modal detail:** tampilan modal disesuaikan menjadi bottom sheet pada layar kecil.
 - **Form tambah jadwal:** stepper dipadatkan, kolom input disusun menjadi satu kolom, dan tombol aksi ditumpuk.
 - **Halaman konfirmasi:** kartu ringkasan dan panel aksi disusun vertikal.
-
-Aturan responsif diterapkan pada CSS halaman terkait, yaitu `landing.css`, `style.css`, `dashboard.css`, `tambahjadwal.css`, dan `konfirmasijadwal.css`. Perubahan navigasi mobile juga melibatkan `dashboard.html` dan `dashboard.js`.
 
 ## Pengujian Fungsionalitas
 
@@ -134,8 +122,6 @@ Pengujian dilakukan dengan mencoba fitur secara langsung melalui browser. Beriku
 | 11 | Konfirmasi jadwal | Halaman konfirmasi ditampilkan sesuai alur |
 | 12 | Logout | Modal konfirmasi muncul dan tindakan mengikuti pilihan pengguna |
 
-**Penting:** tandai hasil pengujian sebagai berhasil hanya setelah fitur benar-benar dicoba. Fitur yang tampak pada antarmuka belum tentu seluruhnya terhubung ke penyimpanan data atau backend.
-
 ## Interaktivitas
 
 Interaksi yang menjadi fokus prototipe meliputi:
@@ -147,59 +133,23 @@ Interaksi yang menjadi fokus prototipe meliputi:
 - Drawer navigasi mobile.
 - Modal konfirmasi logout.
 
-Pengujian perlu memastikan bahwa interaksi tersebut benar-benar mengubah tampilan atau keadaan antarmuka sesuai tindakan pengguna.
-
 ## Penggunaan AI dalam Pengembangan
 
-AI dapat membantu proses prototyping, seperti menyusun struktur HTML, menyesuaikan CSS, membuat interaksi JavaScript, dan mencari alternatif perbaikan ketika ditemukan kesalahan. Hasil bantuan AI tetap perlu diperiksa dan diuji sebelum digunakan.
+AI-assisted prototyping merupakan salah satu pendekatan yang dibahas dalam Modul 7. Dalam pendekatan ini, AI dapat membantu proses pengembangan kode berdasarkan instruksi atau prompt yang diberikan.
 
-Contoh prompt yang relevan untuk dokumentasi:
+Pada proyek JadwalKu, AI dapat dimanfaatkan untuk membantu menyusun struktur HTML, menyesuaikan styling CSS, membuat interaksi JavaScript, serta mencari solusi terhadap kesalahan yang ditemukan selama pengembangan.
 
-> Buatkan dashboard kalender akademik mahasiswa menggunakan HTML, CSS, dan JavaScript dengan sidebar navigasi, ringkasan agenda, kalender bulanan, daftar kegiatan, dan notifikasi. Pisahkan struktur, tampilan, dan interaksi agar kode mudah dikelola.
-
-> Tambahkan interaksi pada kalender agar pengguna dapat berpindah bulan dan memilih agenda untuk melihat detail melalui modal. Modal dapat ditutup dengan tombol tutup atau mengeklik area di luar modal.
-
-Gunakan contoh prompt di atas sebagai referensi. Jika laporan perlu membuktikan penggunaan AI, tambahkan prompt asli dan screenshot percakapan yang benar-benar digunakan selama pengerjaan.
+Meskipun AI dapat membantu mempercepat pengerjaan, hasil kode tetap perlu diperiksa. Kode yang dihasilkan belum tentu langsung sesuai dengan rancangan Figma atau dapat berjalan tanpa perubahan. Oleh karena itu, proses pemeriksaan, pengujian, dan perbaikan manual tetap menjadi bagian penting dari pengembangan website.
 
 ## Git dan GitHub
 
-Git digunakan untuk mencatat perubahan kode melalui commit, sedangkan GitHub digunakan untuk menyimpan repository secara online. Gunakan pesan commit yang menjelaskan perubahan sebenarnya, misalnya:
-
-- `Add landing page structure and styling`
-- `Implement login form validation`
-- `Build academic calendar dashboard`
-- `Add schedule detail modal interaction`
-- `Improve responsive layout`
-
-Contoh di atas adalah rekomendasi penamaan commit. Riwayat commit aktual dapat dilihat di [repository GitHub Kelompok 24](https://github.com/Yuyn1/Kelompok-24).
+Git digunakan untuk mencatat perubahan kode melalui commit, sedangkan GitHub digunakan untuk menyimpan repository secara online. (https://github.com/Yuyn1/Kelompok-24).
 
 ## Product Requirements Document (PRD)
 
 PRD JadwalKu menjelaskan permasalahan yang ingin diselesaikan, target pengguna, kebutuhan fungsional, user stories, kriteria keberhasilan, rancangan antarmuka, aturan deteksi bentrok jadwal, spesifikasi teknis, metode pengujian, risiko, prioritas fitur, dan rencana pengembangan.
 
-**Dokumen PRD:** tambahkan tautan PDF PRD kelompok di sini.
-
-## Dokumentasi Visual
-
-Tambahkan screenshot aktual dari website untuk membantu pembaca memahami hasil implementasi. Simpan gambar pada folder seperti `docs/images/`, lalu gunakan tautan relatif Markdown. Contoh:
-
-```markdown
-![Landing page JadwalKu](docs/images/landing-page.png)
-```
-
-Screenshot yang dapat disertakan:
-
-- Landing page.
-- Halaman login.
-- Dashboard.
-- Kalender dan modal detail agenda.
-- Form tambah jadwal.
-- Halaman konfirmasi.
-- Tampilan mobile.
-- Repository dan riwayat commit GitHub.
-- Perbandingan desain Figma dengan hasil implementasi.
-
-Pastikan file gambar benar-benar ditambahkan ke repository dan nama file pada Markdown sesuai dengan nama file yang ada.
+**Dokumen PDF PRD:** https://drive.google.com/file/d/1HaXVHI8cV9YDi7Haax1kxE1ps2oEIc3L/view?usp=sharing .
 
 ## Kontribusi Anggota
 
@@ -207,11 +157,11 @@ Lengkapi tabel berikut berdasarkan kontribusi yang benar-benar dilakukan setiap 
 
 | Anggota | Kontribusi |
 |---|---|
-| Aditya Putra Hertanto | Isi sesuai kontribusi aktual |
-| Isabella | Isi sesuai kontribusi aktual |
-| Amelia Nurpuspita Dewi | Isi sesuai kontribusi aktual |
-| Meytha Reyani Sirayan | Isi sesuai kontribusi aktual |
-| Dyah Ayu Sri Wulandhari | Isi sesuai kontribusi aktual |
+| Aditya Putra Hertanto | Membuat dan mengembangkan dashboard.html, dashboard.css, dan dashboard.js. |
+| Isabella | Membuat dan mengembangkan tambahjadwal.html, tambahjadwal.css, dan tambahjadwal.js. |
+| Amelia Nurpuspita Dewi | Membuat dan mengembangkan index.html, landing.css, dan README.md. |
+| Meytha Reyani Sirayan | Membuat dan mengembangkan konfirmasijadwal.html, konfirmasijadwal.css, dan konfirmasijadwal.js. |
+| Dyah Ayu Sri Wulandhari | Membuat dan mengembangkan login.html, script.js, dan style.css. |
 
 ## Evaluasi dan Pengembangan Selanjutnya
 
