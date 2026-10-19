@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Berhasil Disimpan - JadwalKu</title>
+    <link rel="stylesheet" href="konfirmasijadwal.css">
+</head>
+<body>
+
+    <!-- NAVBAR ATAS -->
+    <header class="top-navbar">
+        <div class="nav-left">
+            <div class="brand-logo">
+                <span class="logo-icon">📅</span>
+                <span class="logo-text">JadwalKu</span>
+            </div>
+        </div>
+        <div class="nav-center">
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Cari agenda atau mata kuliah">
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="icon-btn">🔔</button>
+            <div class="user-profile">
+                <div class="avatar">AN</div>
+                <div class="user-info">
+                    <span class="user-name">Alya Nirmala</span>
+                    <span class="user-dept">Teknik Informatika</span>
+                </div>
+            </div>
+            <button type="button" class="btn-add-another" id="btnAddAnother">+ Tambah Agenda Lain</button>
+        </div>
+    </header>
+
+    <!-- CONTAINER UTAMA -->
+    <main class="page-container">
+        
+        <!-- HEADER SUKSES -->
+        <div class="success-header">
+            <div class="check-circle">✓</div>
+            <h1>Jadwal berhasil disimpan</h1>
+            <p>Mata Kuliah Pemrograman Web sudah ditambahkan dan tidak memiliki konflik dengan agenda lain.</p>
+        </div>
+
+        <!-- GRID UTAMA KONFIRMASI -->
+        <div class="confirmation-grid">
+            
+            <!-- KARTU RINGKASAN JADWAL (KIRI) -->
+            <section class="summary-card">
+                <!-- Header Kartu Gelap -->
+                <div class="summary-card-header">
+                    <div>
+                        <span class="summary-badge-label">RINGKASAN JADWAL</span>
+                        <h2>JDW-2026-1021-048</h2>
+                    </div>
+                    <span class="status-confirmed-pill">🛡️ Terkonfirmasi</span>
+                </div>
+
+                <!-- Body Ringkasan -->
+                <div class="summary-card-body">
+                    
+                    <!-- Informasi Utama Mata Kuliah -->
+                    <div class="course-info-box">
+                        <div class="course-icon">📖</div>
+                        <div class="course-details">
+                            <span class="course-category">PERKULIAHAN • IF305</span>
+                            <h3>Mata Kuliah Pemrograman Web</h3>
+                            <p>Kelas A • 3 SKS • Dr. Rina Kurniawati, M.Kom.</p>
+                        </div>
+                    </div>
+
+                    <!-- Grid Tiga Kolom: Tanggal, Waktu, Lokasi -->
+                    <div class="info-three-grid">
+                        <div class="info-tile">
+                            <span class="tile-icon">📅</span>
+                            <div>
+                                <span class="tile-label">Hari & tanggal</span>
+                                <strong>Rabu, 21 Oktober 2026</strong>
+                            </div>
+                        </div>
+                        <div class="info-tile">
+                            <span class="tile-icon">🕒</span>
+                            <div>
+                                <span class="tile-label">Waktu</span>
+                                <strong>08.00–09.40 WIB</strong>
+                            </div>
+                        </div>
+                        <div class="info-tile">
+                            <span class="tile-icon">📍</span>
+                            <div>
+                                <span class="tile-label">Lokasi</span>
+                                <strong>Lab Komputer 3.2</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box Pengulangan & Pengingat -->
+                    <div class="repeat-reminder-box">
+                        <div class="repeat-left">
+                            <span class="box-icon">🔄</span>
+                            <div>
+                                <strong>Berulang setiap Rabu</strong>
+                                <small>9 pertemuan hingga 16 Desember 2026</small>
+                            </div>
+                        </div>
+                        <div class="reminder-right">
+                            <span class="bell-icon">🔔</span>
+                            <span>30 menit sebelumnya</span>
+                        </div>
+                    </div>
+
+                    <!-- Box Pemeriksaan Konflik (Hijau Safe) -->
+                    <div class="conflict-safe-box">
+                        <span class="safe-icon">🛡️</span>
+                        <div>
+                            <strong>Pemeriksaan konflik selesai</strong>
+                            <p>Semua 9 pertemuan aman dan memiliki jeda perpindahan cukup.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SIDEBAR AKSI "APA SELANJUTNYA?" (KANAN) -->
+            <aside class="action-sidebar">
+                <div class="action-card">
+                    <h3>Apa selanjutnya?</h3>
+                    <p class="action-subtitle">Kalender Anda sudah diperbarui dan siap digunakan.</p>
+
+                    <!-- Tombol Aksi -->
+                    <div class="action-buttons-group">
+                        <button type="button" class="btn-primary-action" id="btnGoToCalendar">
+                            📅 Lihat di Kalender
+                        </button>
+                        <button type="button" class="btn-outline-action" id="btnDownloadSummary">
+                            📥 Unduh Ringkasan
+                        </button>
+                        <button type="button" class="btn-outline-action" id="btnShareClass">
+                            🔗 Bagikan ke Teman Kelas
+                        </button>
+                    </div>
+
+                    <!-- Kartu Agenda Berikutnya (Kuning Muda) -->
+                    <div class="next-agenda-box">
+                        <div class="next-header">
+                            <span class="next-icon">🔔</span>
+                            <span class="next-title">Berikutnya</span>
+                        </div>
+                        <h4>Rapat Organisasi BEM</h4>
+                        <p class="next-time">Hari ini • 15.30–17.00</p>
+                        <span class="next-location">Sekretariat BEM</span>
+                    </div>
+
+                    <!-- Footer Sinkronisasi -->
+                    <div class="sync-footer-note">
+                        <span>☁️ Tersinkron dengan akun kampus</span>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+
+    </main>
+
+    <script src="konfirmasijadwal.js"></script>
+</body>
+</html>
