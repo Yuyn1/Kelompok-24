@@ -468,3 +468,105 @@ body.page-fade-out {
     align-items: center;
     gap: 6px;
 }
+
+/* ==========================================
+   RESPONSIF - KONFIRMASI JADWAL
+   ========================================== */
+.confirmation-grid > * {
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+    .confirmation-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-navbar {
+        padding: 0 12px;
+        gap: 8px;
+    }
+
+    .nav-center,
+    .search-bar,
+    .user-info {
+        display: none;
+    }
+
+    .nav-right {
+        gap: 10px;
+    }
+
+    .btn-add-another {
+        padding: 8px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .page-container {
+        margin: 16px auto;
+        padding: 0 12px;
+    }
+
+    .success-header {
+        margin-bottom: 20px;
+    }
+
+    .success-header h1 {
+        font-size: 22px;
+    }
+
+    .success-header p {
+        font-size: 13px;
+    }
+
+    .summary-card-header {
+        padding: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .summary-card-header h2 {
+        font-size: 17px;
+        word-break: break-all;
+    }
+
+    .summary-card-body {
+        padding: 16px;
+    }
+
+    .info-three-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .repeat-reminder-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .course-info-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .action-card {
+        padding: 18px;
+    }
+
+    .btn-primary-action,
+    .btn-outline-action {
+        padding: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    /* Ruang sempit: ikon lonceng disembunyikan, tombol utama tetap tampil */
+    .nav-right .icon-btn {
+        display: none;
+    }
+}
