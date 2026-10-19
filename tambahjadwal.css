@@ -483,3 +483,157 @@ body {
 body.page-fade-out {
     opacity: 0;
 }
+
+/* ==========================================
+   RESPONSIF - TAMBAH JADWAL
+   ========================================== */
+.form-container > * {
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+    .form-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-navbar {
+        padding: 0 12px;
+        gap: 8px;
+    }
+
+    .nav-center,
+    .search-bar,
+    .user-info {
+        display: none;
+    }
+
+    .nav-right {
+        gap: 10px;
+    }
+
+    .btn-close-form {
+        padding: 8px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .form-container {
+        margin: 12px auto;
+        padding: 0 12px;
+    }
+
+    /* Stepper dipadatkan menjadi satu baris: hanya langkah aktif yang menampilkan label */
+    .stepper-sidebar {
+        padding: 16px;
+    }
+
+    .stepper-sidebar h2 {
+        font-size: 17px;
+        margin: 12px 0 0 0;
+    }
+
+    .sidebar-subtitle {
+        display: none;
+    }
+
+    .stepper-list {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        margin-top: 16px;
+    }
+
+    .step-item {
+        flex-shrink: 0;
+        gap: 8px;
+    }
+
+    .step-item.active {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .step-item:not(.active) .step-text,
+    .step-text small {
+        display: none;
+    }
+
+    .step-text strong {
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .progress-box {
+        margin-top: 16px;
+        padding: 12px;
+    }
+
+    .form-content-card {
+        padding: 16px;
+    }
+
+    .form-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .form-card-header h1 {
+        font-size: 19px;
+    }
+
+    .summary-box {
+        flex-wrap: wrap;
+    }
+
+    .form-grid-two {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: 0;
+    }
+
+    /* 16px mencegah iOS memperbesar layar otomatis saat input difokus */
+    .input-with-icon input,
+    .input-with-icon select {
+        font-size: 16px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .buffer-info-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .action-right {
+        flex-direction: column-reverse;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .btn-outline,
+    .btn-primary,
+    .btn-ghost {
+        width: 100%;
+        text-align: center;
+        padding: 13px 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .nav-right .icon-btn {
+        display: none;
+    }
+}
