@@ -1037,3 +1037,331 @@ body {
 body.page-fade-out {
     opacity: 0;
 }
+
+/* ==========================================
+   RESPONSIF - DASHBOARD
+   ========================================== */
+/* Elemen khusus mobile: tersembunyi di desktop */
+.menu-toggle {
+    display: none;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.sidebar-backdrop {
+    display: none;
+}
+
+/* Tablet & HP: sidebar menjadi drawer geser */
+@media (max-width: 900px) {
+    .app-container {
+        display: block;
+    }
+
+    .main-content {
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+    }
+
+    .top-navbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        padding: 10px 16px;
+        gap: 10px;
+    }
+
+    .search-container {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+    }
+
+    .user-nav-actions {
+        gap: 10px;
+    }
+
+    .user-info {
+        display: none;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 280px;
+        max-width: 85vw;
+        z-index: 1100;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        visibility: hidden;
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s;
+    }
+
+    body.sidebar-open .sidebar {
+        transform: none;
+        visibility: visible;
+        box-shadow: 8px 0 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .sidebar-backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.5);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        z-index: 1050;
+    }
+
+    body.sidebar-open .sidebar-backdrop {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    body.sidebar-open {
+        overflow: hidden;
+    }
+
+    .dashboard-body {
+        padding: 20px 16px;
+    }
+
+    .calendar-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Banner sambutan */
+    .welcome-banner {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .welcome-banner h1 {
+        font-size: 22px;
+    }
+
+    .action-buttons {
+        width: 100%;
+    }
+
+    .action-buttons > button {
+        flex: 1;
+        padding: 12px 10px;
+    }
+
+    .welcome-banner > .btn-primary {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* Kartu statistik */
+    .stats-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .stat-card {
+        padding: 14px 16px;
+    }
+
+    /* Kalender bulanan: 7 kolom tetap muat, teks agenda dipotong dengan elipsis */
+    .calendar-card-main {
+        padding: 14px;
+    }
+
+    .cal-main-header {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .nav-arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .view-btn {
+        padding: 8px 12px;
+    }
+
+    .monthly-table {
+        table-layout: fixed;
+    }
+
+    .monthly-table th {
+        font-size: 10px;
+    }
+
+    .monthly-table td {
+        height: 74px;
+        padding: 3px;
+    }
+
+    .date-num {
+        font-size: 11px;
+        margin-bottom: 2px;
+    }
+
+    .today-circle {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+
+    .event-pill {
+        font-size: 9px;
+        padding: 3px 4px;
+        border-radius: 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .event-pill small {
+        font-size: 8px;
+    }
+
+    .event-pill::after {
+        display: none;
+    }
+
+    .event-pill:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    /* Tabel Daftar Agenda: geser horizontal di dalam kartunya */
+    #section-agenda .calendar-card-main {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #section-agenda .monthly-table {
+        table-layout: auto;
+        min-width: 620px;
+    }
+
+    #section-agenda .monthly-table th,
+    #section-agenda .monthly-table td {
+        height: auto;
+        width: auto;
+        padding: 10px 8px;
+        white-space: nowrap;
+    }
+
+    #section-agenda .monthly-table th {
+        padding-bottom: 10px;
+        font-size: 11px;
+    }
+
+    #agendaTableBody .event-pill {
+        font-size: 11px;
+        padding: 4px 8px;
+        overflow: visible;
+    }
+
+    /* Notifikasi */
+    #section-notifikasi .calendar-card-main {
+        padding: 14px !important;
+    }
+
+    /* Modal */
+    .modal-overlay {
+        padding: 12px;
+    }
+
+    .modal-card {
+        width: 100%;
+        max-width: 420px;
+        max-height: 92vh;
+        overflow-y: auto;
+    }
+
+    /* 16px mencegah iOS memperbesar layar otomatis saat input difokus */
+    input,
+    select {
+        font-size: 16px;
+    }
+
+    .modal-card .search-input {
+        padding: 11px 12px 11px 12px;
+    }
+
+    /* Modal detail: bottom sheet selebar layar */
+    #modalDetailAgenda {
+        padding: 0;
+    }
+
+    .modal-detail-card {
+        width: 100%;
+        max-width: none;
+        max-height: 92vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal-detail-header {
+        padding: 18px 16px;
+    }
+
+    .modal-detail-body {
+        padding: 16px;
+        max-height: none;
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    .detail-grid-two {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-detail-footer {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        gap: 8px;
+        padding: 12px 16px;
+    }
+
+    .footer-right-btns {
+        width: 100%;
+    }
+
+    .footer-right-btns button {
+        flex: 1;
+        padding: 12px;
+    }
+
+    .btn-ghost-danger {
+        text-align: center;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .dashboard-body {
+        padding: 16px 12px;
+    }
+
+    .stat-badge {
+        font-size: 10px;
+    }
+}
