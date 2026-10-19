@@ -440,4 +440,37 @@ const todayBtn = document.getElementById('todayBtn');
         if (e.target === modalDetailAgenda) hideModalDetail();
     });
 
-    
+// ==========================================
+// NAVIGASI MOBILE: SIDEBAR SEBAGAI DRAWER
+// ==========================================
+(function () {
+    const toggle = document.getElementById('menuToggle');
+    const backdrop = document.getElementById('sidebarBackdrop');
+    const sidebar = document.querySelector('.sidebar');
+    if (!toggle || !sidebar) return;
+
+    function setOpen(open) {
+        document.body.classList.toggle('sidebar-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+    }
+
+    toggle.addEventListener('click', () => {
+        setOpen(!document.body.classList.contains('sidebar-open'));
+    });
+
+    if (backdrop) backdrop.addEventListener('click', () => setOpen(false));
+
+    // Tutup drawer setelah memilih menu / menekan Keluar
+    sidebar.querySelectorAll('.menu-item, #btnLogout').forEach(el => {
+        el.addEventListener('click', () => setOpen(false));
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setOpen(false);
+    });
+
+    // Kembali ke layar lebar: pastikan drawer tertutup
+    window.matchMedia('(min-width: 901px)').addEventListener('change', (e) => {
+        if (e.matches) setOpen(false);
+    });
+})();
