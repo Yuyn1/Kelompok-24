@@ -1,6 +1,6 @@
 # JadwalKu — Kalender Akademik Pintar Mahasiswa
 
-JadwalKu adalah prototipe website kalender akademik yang dirancang untuk membantu mahasiswa mengatur jadwal kuliah, tugas, rapat organisasi, ujian, dan agenda lainnya dalam satu tempat. Proyek ini dikembangkan sebagai bagian dari **Tugas Modul 7: Transformasi Desain Figma ke Prototipe Web Interaktif**.
+JadwalKu adalah prototipe website kalender akademik yang dirancang untuk membantu mahasiswa mengatur jadwal kuliah, tugas, rapat organisasi, ujian, dan agenda lainnya dalam satu tempat.
 
 ## Informasi Proyek
 
