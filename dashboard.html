@@ -26,12 +26,18 @@
                 <li><a href="#" class="menu-item" data-target="section-notifikasi"><span class="icon">🔔</span> Notifikasi</a></li>
             </ul>
 
-            <div class="sidebar-section-title">FILTER SEMESTER</div>
-            <div class="sidebar-filter">
-                <select class="semester-select">
-                    <option>Semester 5</option>
-                    <option>Semester 4</option>
-                    <option>Semester 3</option>
+            <div class="semester-filter-container">
+                <label for="selectSemester" style="font-size: 11px; font-weight: 700; color: #94A3B8; letter-spacing: 0.5px; display: block; margin-bottom: 6px;">FILTER SEMESTER</label>
+                <select id="selectSemester" class="semester-select">
+                    <option value="5" selected>Semester 5</option>
+                    <option value="all">Semua Semester</option>
+                    <option value="1">Semester 1</option>
+                    <option value="2">Semester 2</option>
+                    <option value="3">Semester 3</option>
+                    <option value="4">Semester 4</option>
+                    <option value="6">Semester 6</option>
+                    <option value="7">Semester 7</option>
+                    <option value="8">Semester 8</option>
                 </select>
             </div>
 
@@ -124,12 +130,12 @@
                         <div class="calendar-card-main">
                             <div class="cal-main-header">
                                 <div class="month-navigation">
-                                    <button class="nav-arrow">‹</button>
-                                    <h2>Oktober 2026</h2>
-                                    <button class="nav-arrow">›</button>
+                                    <button class="nav-arrow" id="prevMonthBtn">‹</button>
+                                    <h2 id="currentMonthTitle">Oktober 2026</h2>
+                                    <button class="nav-arrow" id="nextMonthBtn">›</button>
                                 </div>
                                 <div class="cal-view-switches">
-                                    <button class="view-btn">Hari ini</button>
+                                    <button class="view-btn" id="todayBtn">Hari ini</button>
                                     <button class="view-btn active">Bulan</button>
                                 </div>
                             </div>
@@ -138,7 +144,7 @@
                                 <thead>
                                     <tr><th>Sen</th><th>Sel</th><th>Rab</th><th>Kam</th><th>Jum</th><th>Sab</th><th>Min</th></tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="calendarTableBody">
                                     <tr>
                                         <td><span class="date-num">29</span></td><td><span class="date-num">30</span></td><td><span class="date-num">1</span></td>
                                         <td><span class="date-num">2</span><div class="event-pill purple-pill">Pemrograman<br><small>08.00</small></div></td>
@@ -355,60 +361,115 @@
     </div>
 
     <!-- SCRIPT LOGIKA DASHBOARD & SPA -->
-    <script>
-        // 1. Load Nama User & Setup Sidebar Switching
-        window.addEventListener('DOMContentLoaded', () => {
-            const currentUser = localStorage.getItem('currentUser') || 'Alya Nirmala';
-            document.getElementById('userNameDisplay').textContent = currentUser;
-            document.getElementById('greetingName').textContent = currentUser.toUpperCase();
-            document.getElementById('userAvatar').textContent = currentUser.substring(0, 2).toUpperCase();
+    <!-- MODAL KONFIRMASI LOGOUT -->
+    <div id="modalLogout" class="modal-overlay" style="display: none;">
+        <div class="modal-card" style="text-align: center; max-width: 380px; padding: 28px 24px;">
+            <div style="width: 52px; height: 52px; background: #FEF2F2; color: #DC2626; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; margin: 0 auto 16px auto;">
+                🚪
+            </div>
+            <h3 style="font-size: 18px; font-weight: 700; color: #0F172A; margin-bottom: 8px;">Konfirmasi Keluar</h3>
+            <p style="font-size: 13px; color: #64748B; margin-bottom: 24px; line-height: 1.5;">
+                Apakah Anda yakin ingin keluar dari akun <strong>JadwalKu</strong>? Anda perlu login kembali untuk mengakses halaman ini.
+            </p>
+            <div style="display: flex; gap: 12px; justify-content: center;">
+                <button type="button" id="btnCancelLogout" class="btn-outline" style="flex: 1; padding: 10px;">Batal</button>
+                <button type="button" id="btnConfirmLogout" class="btn-primary" style="flex: 1; padding: 10px; background-color: #DC2626; border-color: #DC2626;">Ya, Keluar</button>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL DETAIL AGENDA -->
+<div id="modalDetailAgenda" class="modal-overlay" style="display: none;">
+    <div class="modal-card modal-detail-card">
+        <!-- Header Modal -->
+        <div class="modal-detail-header">
+            <div class="modal-header-top">
+                <span id="detailKategori" class="badge-category">📖 Perkuliahan</span>
+                <button type="button" id="closeDetailBtn" class="btn-close-circle">✕</button>
+            </div>
+            <h3 id="detailJudul">Mata Kuliah Pemrograman Web</h3>
+            <p id="detailKode">IF305 • Kelas A • 3 SKS</p>
+        </div>
 
-            // Fitur SPA Sidebar Navigation
-            const menuItems = document.querySelectorAll('.sidebar-menu .menu-item');
-            const sections = document.querySelectorAll('.dashboard-body > div');
+        <!-- Body Modal -->
+        <div class="modal-detail-body">
+            <!-- Grid Tanggal & Waktu -->
+            <div class="detail-grid-two">
+                <div class="detail-box">
+                    <div class="detail-box-icon">📅</div>
+                    <div>
+                        <span class="detail-label">Tanggal</span>
+                        <div id="detailTanggal" class="detail-value">Rabu, 14 Oktober 2026</div>
+                    </div>
+                </div>
+                <div class="detail-box">
+                    <div class="detail-box-icon">🕒</div>
+                    <div>
+                        <span class="detail-label">Waktu</span>
+                        <div id="detailWaktu" class="detail-value">08.00–09.40 WIB</div>
+                    </div>
+                </div>
+            </div>
 
-            menuItems.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    menuItems.forEach(i => i.classList.remove('active'));
-                    item.classList.add('active');
+            <!-- List Informasi Tambahan -->
+            <div class="detail-info-list">
+                <div class="detail-info-item">
+                    <span class="info-icon">📍</span>
+                    <div>
+                        <span class="info-label">Lokasi</span>
+                        <div id="detailLokasi" class="info-value">Lab Komputer 3.2, Gedung Informatika</div>
+                    </div>
+                </div>
+                <div class="detail-info-item">
+                    <span class="info-icon">👤</span>
+                    <div>
+                        <span class="info-label">Dosen pengampu / Penanggung Jawab</span>
+                        <div id="detailDosen" class="info-value">Dr. Rina Kurniawati, M.Kom.</div>
+                    </div>
+                </div>
+                <div class="detail-info-item">
+                    <span class="info-icon">🔄</span>
+                    <div>
+                        <span class="info-label">Pengulangan</span>
+                        <div id="detailPengulangan" class="info-value">Setiap Rabu hingga 16 Desember 2026</div>
+                    </div>
+                </div>
+                <div class="detail-info-item">
+                    <span class="info-icon">🔔</span>
+                    <div>
+                        <span class="info-label">Pengingat</span>
+                        <div id="detailPengingat" class="info-value">30 menit sebelum kelas</div>
+                    </div>
+                </div>
+            </div>
 
-                    const targetId = item.getAttribute('data-target');
-                    sections.forEach(sec => {
-                        sec.style.display = (sec.id === targetId) ? 'block' : 'none';
-                    });
-                });
-            });
+            <!-- Catatan Kelas (Biru) -->
+            <div class="detail-note-box">
+                <span class="note-title">CATATAN KELAS</span>
+                <p id="detailCatatan">Bawa laptop dan pastikan Node.js versi terbaru sudah terpasang untuk praktikum React.</p>
+            </div>
 
-            // Logout Handler
-            document.getElementById('btnLogout').addEventListener('click', () => {
-                localStorage.removeItem('currentUser');
-                window.location.href = "login.html";
-            });
+            <!-- Status Bentrok / Safe (Hijau/Merah) -->
+            <div id="detailStatusBox" class="detail-status-box status-safe">
+                <span class="status-icon">🛡️</span>
+                <div>
+                    <strong id="detailStatusJudul">Tidak ada konflik jadwal</strong>
+                    <p id="detailStatusSub">Slot sebelum dan sesudah kelas memiliki jeda yang cukup.</p>
+                </div>
+            </div>
+        </div>
 
-            // Modal Popup Handler
-            const modal = document.getElementById('modalTambah');
-            const openBtns = [document.getElementById('openModalBtn'), document.getElementById('openModalBtn2')];
-            const closeBtn = document.getElementById('closeModalBtn');
-
-            openBtns.forEach(btn => {
-                if(btn) btn.addEventListener('click', () => modal.style.display = 'flex');
-            });
-            if(closeBtn) closeBtn.addEventListener('click', () => modal.style.display = 'none');
-
-            // Tambah Agenda Form Handler
-            document.getElementById('formTambahAgenda').addEventListener('submit', (e) => {
-                e.preventDefault();
-                const nama = document.getElementById('inputNamaAgenda').value;
-                const kat = document.getElementById('inputKategori').value;
-                const waktu = document.getElementById('inputWaktu').value;
-                const lokasi = document.getElementById('inputLokasi').value;
-
-                alert(`Agenda "${nama}" berhasil disimpan!`);
-                modal.style.display = 'none';
-                e.target.reset();
-            });
-        });
-    </script>
+        <!-- Footer Modal -->
+        <div class="modal-detail-footer">
+            <button type="button" id="btnHapusDetail" class="btn-ghost-danger">
+                🗑️ Hapus Agenda
+            </button>
+            <div class="footer-right-btns">
+                <button type="button" id="btnTutupDetail" class="btn-outline">Tutup</button>
+                <button type="button" id="btnEditDetail" class="btn-primary">✏️ Edit Jadwal</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="dashboard.js"></script>
 </body>
 </html>
