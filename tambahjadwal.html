@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Jadwal Akademik - JadwalKu</title>
+    <link rel="stylesheet" href="tambahjadwal.css">
+</head>
+<body>
+
+    <!-- NAVBAR ATAS -->
+    <header class="top-navbar">
+        <div class="nav-left">
+            <div class="brand-logo">
+                <span class="logo-icon">📅</span>
+                <span class="logo-text">JadwalKu</span>
+            </div>
+        </div>
+        <div class="nav-center">
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Cari agenda atau mata kuliah">
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="icon-btn">🔔</button>
+            <div class="user-profile">
+                <div class="avatar">AN</div>
+                <div class="user-info">
+                    <span class="user-name">Alya Nirmala</span>
+                    <span class="user-dept">Teknik Informatika</span>
+                </div>
+            </div>
+            <a href="dashboard.html" class="btn-close-form">✕ Tutup Formulir</a>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA MULTI-STEP FORM -->
+    <main class="form-container">
+        
+        <!-- SIDEBAR STEPPER (KIRI) -->
+        <aside class="stepper-sidebar">
+            <div class="badge-pill-header">
+                <span>🗓️ Jadwal baru</span>
+            </div>
+            <h2>Tambah agenda akademik</h2>
+            <p class="sidebar-subtitle">JadwalKu akan memeriksa konflik sebelum agenda disimpan.</p>
+
+            <!-- INDIKATOR LANGKAH -->
+            <ul class="stepper-list">
+                <li class="step-item completed" id="step-nav-1">
+                    <div class="step-icon">✓</div>
+                    <div class="step-text">
+                        <strong>Informasi agenda</strong>
+                        <small>Nama dan kategori</small>
+                    </div>
+                </li>
+                <li class="step-item active" id="step-nav-2">
+                    <div class="step-icon">2</div>
+                    <div class="step-text">
+                        <strong>Waktu & lokasi</strong>
+                        <small>Tanggal, jam, dan tempat</small>
+                    </div>
+                </li>
+                <li class="step-item" id="step-nav-3">
+                    <div class="step-icon">3</div>
+                    <div class="step-text">
+                        <strong>Pengingat</strong>
+                        <small>Atur notifikasi agenda</small>
+                    </div>
+                </li>
+                <li class="step-item" id="step-nav-4">
+                    <div class="step-icon">4</div>
+                    <div class="step-text">
+                        <strong>Tinjau & simpan</strong>
+                        <small>Pastikan semua benar</small>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- PROGRESS BAR KELENGKAPAN -->
+            <div class="progress-box">
+                <div class="progress-label">
+                    <span>Kelengkapan</span>
+                    <strong id="progressPercentText">50%</strong>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progressBarFill" style="width: 50%;"></div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- KONTEN FORMULIR (KANAN) -->
+        <section class="form-content-card">
+            
+            <div class="form-card-header">
+                <div>
+                    <span class="step-badge" id="stepBadgeText">LANGKAH 2 DARI 4</span>
+                    <h1 id="stepTitleText">Tentukan waktu dan lokasi</h1>
+                    <p id="stepSubTitleText">Isi detail pelaksanaan agar pemeriksaan konflik lebih akurat.</p>
+                </div>
+                <div class="autosave-badge">
+                    <span>🍃 Tersimpan otomatis</span>
+                </div>
+            </div>
+
+            <!-- RINGKASAN AGEND DARI LANGKAH 1 -->
+            <div class="summary-box">
+                <div class="summary-icon">📖</div>
+                <div class="summary-info">
+                    <span class="summary-label">Agenda yang ditambahkan</span>
+                    <strong id="summaryText">Mata Kuliah Pemrograman Web • Perkuliahan</strong>
+                </div>
+                <button type="button" class="btn-text-action" id="btnEditStep1">Ubah</button>
+            </div>
+
+            <!-- INPUT FORM WAKTU & LOKASI -->
+            <form id="multiStepForm">
+                <div class="form-grid-two">
+                    <div class="form-group">
+                        <label>Tanggal mulai</label>
+                        <div class="input-with-icon">
+                            <span class="input-icon">📅</span>
+                            <input type="text" value="Rabu, 21 Oktober 2026" id="inputTanggalMulai">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Tanggal selesai</label>
+                        <div class="input-with-icon">
+                            <span class="input-icon">📅</span>
+                            <input type="text" value="Rabu, 16 Desember 2026" id="inputTanggalSelesai">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-grid-two">
+                    <div class="form-group">
+                        <label>Waktu mulai</label>
+                        <div class="input-with-icon">
+                            <span class="input-icon">🕒</span>
+                            <input type="text" value="08.00 WIB" id="inputWaktuMulai">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Waktu selesai</label>
+                        <div class="input-with-icon">
+                            <span class="input-icon">🕒</span>
+                            <input type="text" value="09.40 WIB" id="inputWaktuSelesai">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-grid-two">
+                    <div class="form-group">
+                        <label>Pengulangan</label>
+                        <div class="input-with-icon">
+                            <span class="input-icon">🔄</span>
+                            <select id="selectPengulangan">
+                                <option selected>Setiap minggu</option>
+                                <option>Dwi-mingguan</option>
+                                <option>Tidak diulang</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Hari perkuliahan</label>
+                        <div class="input-with-icon">
+                            <span class="input-icon">📅</span>
+                            <select id="selectHari">
+                                <option selected>Setiap Rabu</option>
+                                <option>Setiap Senin</option>
+                                <option>Setiap Selasa</option>
+                                <option>Setiap Kamis</option>
+                                <option>Setiap Jumat</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Lokasi</label>
+                    <div class="input-with-icon">
+                        <span class="input-icon">📍</span>
+                        <input type="text" value="Lab Komputer 3.2, Gedung Informatika" id="inputLokasi">
+                    </div>
+                    <small class="helper-text">Lokasi membantu menghitung jeda perpindahan antaragenda.</small>
+                </div>
+
+                <!-- NOTIFIKASI JEDA PERPINDAHAN -->
+                <div class="buffer-info-box">
+                    <div class="buffer-left">
+                        <span class="buffer-icon">🦶</span>
+                        <div>
+                            <strong>Jeda perpindahan 20 menit</strong>
+                            <p>Cukup untuk berjalan dari Gedung Informatika ke agenda berikutnya.</p>
+                        </div>
+                    </div>
+                    <div class="badge-status-safe">
+                        ✓ Aman
+                    </div>
+                </div>
+
+                <!-- ACTION BUTTONS -->
+                <div class="form-actions">
+                    <button type="button" class="btn-outline" id="btnPrevStep">← Kembali</button>
+                    <div class="action-right">
+                        <button type="button" class="btn-ghost" id="btnSaveDraft">Simpan Draf</button>
+                        <button type="button" class="btn-primary" id="btnNextStep">Lanjut ke Pengingat →</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="tambahjadwal.js"></script>
+</body>
+</html>
