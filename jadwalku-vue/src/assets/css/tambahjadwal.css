@@ -1,0 +1,689 @@
+/* Gaya halaman ini di-namespace dengan wrapper .page-tambah agar tidak bentrok dengan halaman lain (SPA). */
+/* RESET & VARIABLE STYLE */
+.page-tambah, .page-tambah * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.page-tambah {
+    background-color: #E2E8F0;
+    color: #0F172A;
+    min-height: 100vh;
+}
+
+/* NAVBAR ATAS */
+.page-tambah .top-navbar {
+    background-color: #FFFFFF;
+    height: 64px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #CBD5E1;
+}
+
+.page-tambah .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #1E3A8A;
+}
+
+.page-tambah .search-bar {
+    background-color: #F1F5F9;
+    border-radius: 8px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 320px;
+}
+
+.page-tambah .search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 13px;
+    width: 100%;
+}
+
+.page-tambah .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.page-tambah .icon-btn {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.page-tambah .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-tambah .avatar {
+    width: 36px;
+    height: 36px;
+    background-color: #0F172A;
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.page-tambah .user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-tambah .user-name {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.page-tambah .user-dept {
+    font-size: 11px;
+    color: #64748B;
+}
+
+.page-tambah .btn-close-form {
+    background-color: #DC2626;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.page-tambah .btn-close-form:hover {
+    background-color: #B91C1C;
+}
+
+/* KONTEN UTAMA GRID */
+.page-tambah .form-container {
+    max-width: 1200px;
+    margin: 24px auto;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 20px;
+}
+
+/* SIDEBAR STEPPER (KIRI) */
+.page-tambah .stepper-sidebar {
+    background-color: #0F172A;
+    color: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-tambah .badge-pill-header span {
+    background-color: #1E293B;
+    color: #60A5FA;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.page-tambah .stepper-sidebar h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 16px 0 8px 0;
+}
+
+.page-tambah .sidebar-subtitle {
+    font-size: 12px;
+    color: #94A3B8;
+    line-height: 1.4;
+    margin-bottom: 28px;
+}
+
+.page-tambah .stepper-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.page-tambah .step-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.page-tambah .step-item.active, .page-tambah .step-item.completed {
+    opacity: 1;
+}
+
+.page-tambah .step-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.page-tambah .step-item.completed .step-icon {
+    background-color: #059669;
+    border-color: #059669;
+    color: #FFFFFF;
+}
+
+.page-tambah .step-item.active .step-icon {
+    background-color: #2563EB;
+    border-color: #2563EB;
+    color: #FFFFFF;
+}
+
+.page-tambah .step-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-tambah .step-text strong {
+    font-size: 13px;
+}
+
+.page-tambah .step-text small {
+    font-size: 11px;
+    color: #94A3B8;
+}
+
+.page-tambah .progress-box {
+    margin-top: auto;
+    padding-top: 24px;
+    background-color: #1E293B;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.page-tambah .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #94A3B8;
+    margin-bottom: 8px;
+}
+
+.page-tambah .progress-label strong {
+    color: #FFFFFF;
+}
+
+.page-tambah .progress-bar-bg {
+    height: 6px;
+    background-color: #334155;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.page-tambah .progress-bar-fill {
+    height: 100%;
+    background-color: #2563EB;
+    transition: width 0.3s ease;
+}
+
+/* KONTEN FORMULIR (KANAN) */
+.page-tambah .form-content-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.page-tambah .form-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.page-tambah .step-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2563EB;
+    letter-spacing: 0.5px;
+}
+
+.page-tambah .form-card-header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 4px 0;
+}
+
+.page-tambah .form-card-header p {
+    font-size: 13px;
+    color: #64748B;
+}
+
+.page-tambah .autosave-badge {
+    background-color: #ECFDF5;
+    color: #047857;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.page-tambah .summary-box {
+    background-color: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.page-tambah .summary-icon {
+    font-size: 18px;
+}
+
+.page-tambah .summary-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.page-tambah .summary-label {
+    font-size: 11px;
+    color: #64748B;
+}
+
+.page-tambah .summary-info strong {
+    font-size: 13px;
+    color: #1E3A8A;
+}
+
+.page-tambah .btn-text-action {
+    background: transparent;
+    border: none;
+    color: #2563EB;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* INPUT FORM */
+.page-tambah .form-grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.page-tambah .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.page-tambah .form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1E293B;
+}
+
+.page-tambah .input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.page-tambah .input-icon {
+    position: absolute;
+    left: 12px;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.page-tambah .input-with-icon input, .page-tambah .input-with-icon select {
+    width: 100%;
+    padding: 10px 12px 10px 36px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+    background-color: #FFFFFF;
+    transition: border-color 0.2s;
+}
+
+.page-tambah .input-with-icon input:focus, .page-tambah .input-with-icon select:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.page-tambah .helper-text {
+    font-size: 11px;
+    color: #64748B;
+}
+
+/* BUFFER INFO BOX */
+.page-tambah .buffer-info-box {
+    background-color: #FEFCE8;
+    border: 1px solid #FEF08A;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px 0;
+}
+
+.page-tambah .buffer-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page-tambah .buffer-icon {
+    font-size: 20px;
+}
+
+.page-tambah .buffer-left strong {
+    font-size: 13px;
+    color: #854D0E;
+    display: block;
+}
+
+.page-tambah .buffer-left p {
+    font-size: 12px;
+    color: #A16207;
+}
+
+.page-tambah .badge-status-safe {
+    background-color: #DCFCE7;
+    color: #15803D;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* ACTION BUTTONS */
+.page-tambah .form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 20px;
+}
+
+.page-tambah .action-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page-tambah .btn-outline {
+    background: transparent;
+    border: 1px solid #CBD5E1;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.page-tambah .btn-ghost {
+    background: transparent;
+    border: none;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.page-tambah .btn-primary {
+    background-color: #2563EB;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.page-tambah .btn-primary:hover {
+    background-color: #1D4ED8;
+}
+
+/* Transisi Smooth Antarhalaman */
+.page-tambah {
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out;
+}
+
+/* ==========================================
+   RESPONSIF - TAMBAH JADWAL
+   ========================================== */
+.page-tambah .form-container > * {
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+    .page-tambah .form-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-tambah .top-navbar {
+        padding: 0 12px;
+        gap: 8px;
+    }
+
+    .page-tambah .nav-center,
+    .page-tambah .search-bar,
+    .page-tambah .user-info {
+        display: none;
+    }
+
+    .page-tambah .nav-right {
+        gap: 10px;
+    }
+
+    .page-tambah .btn-close-form {
+        padding: 8px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .page-tambah .form-container {
+        margin: 12px auto;
+        padding: 0 12px;
+    }
+
+    /* Stepper dipadatkan menjadi satu baris: hanya langkah aktif yang menampilkan label */
+    .page-tambah .stepper-sidebar {
+        padding: 16px;
+    }
+
+    .page-tambah .stepper-sidebar h2 {
+        font-size: 17px;
+        margin: 12px 0 0 0;
+    }
+
+    .page-tambah .sidebar-subtitle {
+        display: none;
+    }
+
+    .page-tambah .stepper-list {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        margin-top: 16px;
+    }
+
+    .page-tambah .step-item {
+        flex-shrink: 0;
+        gap: 8px;
+    }
+
+    .page-tambah .step-item.active {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .page-tambah .step-item:not(.active) .step-text,
+    .page-tambah .step-text small {
+        display: none;
+    }
+
+    .page-tambah .step-text strong {
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .page-tambah .progress-box {
+        margin-top: 16px;
+        padding: 12px;
+    }
+
+    .page-tambah .form-content-card {
+        padding: 16px;
+    }
+
+    .page-tambah .form-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .page-tambah .form-card-header h1 {
+        font-size: 19px;
+    }
+
+    .page-tambah .summary-box {
+        flex-wrap: wrap;
+    }
+
+    .page-tambah .form-grid-two {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: 0;
+    }
+
+    /* 16px mencegah iOS memperbesar layar otomatis saat input difokus */
+    .page-tambah .input-with-icon input,
+    .page-tambah .input-with-icon select {
+        font-size: 16px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .page-tambah .buffer-info-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .page-tambah .form-actions {
+        flex-direction: column-reverse;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .page-tambah .action-right {
+        flex-direction: column-reverse;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .page-tambah .btn-outline,
+    .page-tambah .btn-primary,
+    .page-tambah .btn-ghost {
+        width: 100%;
+        text-align: center;
+        padding: 13px 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .page-tambah .nav-right .icon-btn {
+        display: none;
+    }
+}
+
+/* ===== Tambahan untuk versi Vue: panel langkah 1, 3, 4 ===== */
+.page-tambah .field-error {
+    font-size: 12px;
+    color: #DC2626;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.page-tambah .input-with-icon textarea {
+    width: 100%;
+}
+
+.page-tambah .review-list {
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.page-tambah .review-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 16px;
+    font-size: 13px;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.page-tambah .review-row:last-child {
+    border-bottom: none;
+}
+
+.page-tambah .review-row span {
+    color: #64748B;
+    flex-shrink: 0;
+}
+
+.page-tambah .review-row strong {
+    color: #0F172A;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .page-tambah .review-row {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .page-tambah .review-row strong {
+        text-align: left;
+    }
+}

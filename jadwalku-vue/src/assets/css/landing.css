@@ -1,0 +1,601 @@
+/* Gaya halaman ini di-namespace dengan wrapper .page-landing agar tidak bentrok dengan halaman lain (SPA). */
+/* ================= LANDING PAGE STYLES ================= */
+.page-landing {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    overflow-x: clip;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Navbar */
+.page-landing .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.page-landing .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-landing .brand-title {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    color: #0F172A;
+}
+
+.page-landing .nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.page-landing .nav-link {
+    text-decoration: none;
+    color: #64748B;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.page-landing .nav-link:hover, .page-landing .nav-link.active {
+    color: #2563EB;
+}
+
+.page-landing .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.page-landing .btn-login {
+    text-decoration: none;
+    color: #1E293B;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.page-landing .btn-primary {
+    background-color: #2563EB;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-landing .btn-primary:hover {
+    background-color: #1D4ED8;
+}
+
+.page-landing .btn-outline {
+    background-color: transparent;
+    color: #0F172A;
+    border: 1px solid #CBD5E1;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.page-landing .btn-outline:hover {
+    background-color: #F1F5F9;
+}
+
+/* Hero Section */
+.page-landing .hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.page-landing .hero-left {
+    flex: 1;
+    max-width: 560px;
+}
+
+.page-landing .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #EFF6FF;
+    color: #2563EB;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid #BFDBFE;
+}
+
+.page-landing .hero-left h1 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    color: #0F172A;
+    margin-bottom: 18px;
+}
+
+.page-landing .hero-desc {
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.page-landing .hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 36px;
+}
+
+.page-landing .btn-large {
+    padding: 12px 24px;
+    font-size: 15px;
+}
+
+.page-landing .hero-social-proof {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page-landing .avatar-group {
+    display: flex;
+}
+
+.page-landing .avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FFFFFF;
+    margin-left: -8px;
+}
+
+.page-landing .avatar:first-child {
+    margin-left: 0;
+}
+
+.page-landing .proof-text {
+    font-size: 13px;
+    color: #64748B;
+}
+
+/* Calendar Preview Right Panel */
+.page-landing .hero-right {
+    flex: 1.1;
+}
+
+/* Calendar Preview Right Panel / Kotak Utama Kalender */
+.page-landing .calendar-preview-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    
+    /* --- SHADOW UTAMA YANG LEBIH TEGAS & TIMBUL --- */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.18), 0 10px 20px -5px rgba(0, 0, 0, 0.08);
+    
+    border: 1px solid #E2E8F0;
+    padding: 24px;
+}
+
+.page-landing .calendar-header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.page-landing .cal-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: #0F172A;
+}
+
+.page-landing .cal-status {
+    background-color: #ECFDF5;
+    color: #059669;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.page-landing .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.page-landing .cal-col {
+    background-color: #F8FAFC;
+    border-radius: 8px;
+    padding: 8px;
+    min-height: 220px;
+}
+
+.page-landing .day-name {
+    font-size: 10px;
+    font-weight: 700;
+    color: #94A3B8;
+    text-align: center;
+}
+
+.page-landing .day-num {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0F172A;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.page-landing .cal-event {
+    background-color: #FFFFFF;
+    /* Hapus border tipis agar shadow lebih bersih */
+    border: none; 
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 10px; /* Sedikit tambah jarak antar card */
+    
+    /* --- SHADOW YANG LEBIH JELAS & TEGAS --- */
+    /* Nilai blur dan spread lebih besar, warna sedikit lebih gelap */
+    box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.12), 0 4px 6px -3px rgba(0, 0, 0, 0.08);
+    
+    /* Transisi tetap halus */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efek hover yang lebih dramatis */
+.page-landing .cal-event:hover {
+    transform: translateY(-3px); /* Kartu naik lebih tinggi */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.page-landing .cal-event.blue-bg {
+    background-color: #EFF6FF;
+    /* Border dihilangkan juga untuk versi biru */
+    border: none;
+}
+
+.page-landing .ev-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1E293B;
+    margin-bottom: 2px;
+}
+
+.page-landing .ev-time {
+    font-size: 9px;
+    color: #64748B;
+}
+
+.page-landing .cal-footer-alert {
+    background-color: #0F172A;
+    color: #FFFFFF;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Features Section */
+.page-landing .features-section {
+    padding: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.page-landing .section-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2563EB;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.page-landing .section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.page-landing .section-note {
+    font-size: 13px;
+    color: #64748B;
+    margin-bottom: 40px;
+}
+
+.page-landing .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    text-align: left;
+}
+
+.page-landing .feature-card {
+    background-color: #FFFFFF;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+}
+
+.page-landing .feat-icon-box {
+    width: 36px;
+    height: 36px;
+    background-color: #EFF6FF;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.page-landing .feature-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0F172A;
+    margin-bottom: 8px;
+}
+
+.page-landing .feature-card p {
+    font-size: 13px;
+    color: #64748B;
+    line-height: 1.5;
+}
+
+/* ================= GAYA KHUSUS HARI INI (TODAY) ================= */
+.page-landing .cal-col.today {
+    background-color: #EFF6FF; /* Latar belakang biru sangat muda */
+    border: 2px solid #2563EB; /* Garis tepi biru utama yang tegas */
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15); /* Efek timbul khusus */
+}
+
+/* Mengubah warna teks nama hari dan tanggal untuk hari ini agar lebih menonjol */
+.page-landing .cal-col.today .day-name {
+    color: #1D4ED8;
+    font-weight: 800;
+}
+
+.page-landing .cal-col.today .day-num {
+    color: #1E40AF;
+    background-color: #2563EB;
+    color: #FFFFFF;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px auto;
+    font-size: 14px;
+}
+
+/* ==========================================
+   RESPONSIF - LANDING PAGE
+   ========================================== */
+.page-landing section[id], .page-landing header[id] {
+    scroll-margin-top: 110px;
+}
+
+/* Tablet & di bawahnya: hero ditumpuk */
+@media (max-width: 900px) {
+    .page-landing .navbar {
+        padding: 16px 32px;
+    }
+
+    .page-landing .hero-section {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 40px 32px;
+        gap: 40px;
+    }
+
+    .page-landing .hero-left {
+        max-width: none;
+    }
+
+    .page-landing .hero-right {
+        flex: none;
+        width: 100%;
+    }
+
+    .page-landing .features-section {
+        padding: 48px 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navbar: baris 1 = logo + tombol, baris 2 = menu yang bisa digeser */
+    .page-landing .navbar {
+        flex-wrap: wrap;
+        padding: 12px 16px 0 16px;
+        row-gap: 0;
+    }
+
+    .page-landing .nav-actions .btn-primary {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .page-landing .nav-links {
+        order: 3;
+        width: 100%;
+        gap: 24px;
+        margin-top: 10px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .page-landing .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .page-landing .nav-link {
+        flex-shrink: 0;
+        padding: 10px 0;
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+    }
+
+    .page-landing .nav-link.active {
+        border-bottom-color: #2563EB;
+    }
+
+    .page-landing section[id], .page-landing header[id] {
+        scroll-margin-top: 100px;
+    }
+
+    /* Hero */
+    .page-landing .hero-section {
+        padding: 32px 16px 40px 16px;
+        gap: 32px;
+    }
+
+    .page-landing .hero-left h1 {
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+
+    .page-landing .hero-desc {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+
+    .page-landing .hero-buttons {
+        flex-direction: column;
+        margin-bottom: 28px;
+    }
+
+    .page-landing .hero-buttons .btn-large {
+        width: 100%;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+    }
+
+    .page-landing .hero-social-proof {
+        flex-wrap: wrap;
+    }
+
+    /* Mockup kalender: kartu lebih ringkas, kolom hari bisa digeser */
+    .page-landing .calendar-preview-card {
+        padding: 14px;
+    }
+
+    .page-landing .calendar-header-card {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .page-landing .calendar-grid {
+        grid-template-columns: repeat(5, minmax(96px, 1fr));
+        overflow-x: auto;
+        padding: 4px 4px 14px 4px;
+        margin: 0 -4px 4px -4px;
+        scroll-snap-type: x proximity;
+        scrollbar-width: none;
+    }
+
+    .page-landing .calendar-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .page-landing .cal-col {
+        min-height: 150px;
+        scroll-snap-align: start;
+    }
+
+    .page-landing .ev-title {
+        font-size: 12px;
+    }
+
+    .page-landing .ev-time {
+        font-size: 10px;
+    }
+
+    /* Section fitur / cara kerja / kampus */
+    .page-landing .features-section {
+        padding: 40px 16px;
+    }
+
+    .page-landing .section-title {
+        font-size: 22px;
+    }
+
+    .page-landing .section-note {
+        margin-bottom: 28px;
+    }
+
+    .page-landing .features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Banner "Untuk Kampus" memakai inline style span 3 + padding besar */
+    .page-landing .features-grid .feature-card {
+        grid-column: auto !important;
+        padding: 20px !important;
+    }
+
+    .page-landing .features-grid .feature-card p {
+        font-size: 14px !important;
+    }
+}
+/* Styling tambahan untuk menyesuaikan kotak hari ini persis seperti referensi */
+.page-landing .cal-col.today {
+    background-color: #FFFFFF;
+    border: 2px solid #2563EB;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.12);
+    position: relative;
+}
+
+.page-landing .today-badge-circle {
+    background-color: #2563EB;
+    color: #FFFFFF;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px auto;
+    font-size: 14px;
+    font-weight: 700;
+}

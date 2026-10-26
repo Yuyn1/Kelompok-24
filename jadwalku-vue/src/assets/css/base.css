@@ -1,0 +1,31 @@
+/* Gaya global minimal. Gaya tiap halaman ada di file CSS masing-masing. */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #F8FAFC;
+}
+
+/* Transisi pudar antarhalaman (menggantikan smoothNavigateTo versi lama) */
+.page-enter-active,
+.page-leave-active {
+    transition: opacity 0.25s ease-in-out;
+}
+
+.page-enter-from,
+.page-leave-to {
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .page-enter-active,
+    .page-leave-active {
+        transition: none;
+    }
+}

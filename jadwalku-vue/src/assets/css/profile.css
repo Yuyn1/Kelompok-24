@@ -1,0 +1,206 @@
+.page-profil {
+  min-height: 100vh;
+  background-color: #F1F5F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.profil-card {
+  background: #FFFFFF;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  position: relative;
+}
+
+.profil-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #E2E8F0;
+  padding-bottom: 20px;
+}
+
+.profil-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0;
+}
+
+.btn-close {
+  background: transparent;
+  border: none;
+  color: #64748B;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.btn-close:hover {
+  color: #0F172A;
+}
+
+/* AVATAR UPLOAD SECTION */
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  background-color: #0F172A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 36px;
+  font-weight: 700;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-size: 24px;
+}
+
+.avatar-wrapper:hover .avatar-overlay {
+  opacity: 1;
+}
+
+.upload-text {
+  font-size: 13px;
+  color: #64748B;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.upload-text:hover {
+  color: #2563EB;
+}
+
+.file-input {
+  display: none;
+}
+
+/* FORM FIELDS */
+.profil-form .form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profil-form .form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.profil-form .form-row .form-group {
+  flex: 1;
+}
+
+.profil-form label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.profil-form input,
+.profil-form select,
+.profil-form textarea {
+  padding: 12px 16px;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0F172A;
+  background-color: #F8FAFC;
+  transition: all 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.profil-form input:focus,
+.profil-form select:focus,
+.profil-form textarea:focus {
+  outline: none;
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background-color: #FFFFFF;
+}
+
+.profil-form input:disabled {
+  background-color: #E2E8F0;
+  color: #64748B;
+  cursor: not-allowed;
+  border-color: #E2E8F0;
+}
+
+.btn-save-profil {
+  margin-top: 24px;
+  width: 100%;
+  padding: 14px;
+  background-color: #2563EB;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.btn-save-profil:hover {
+  background-color: #1D4ED8;
+}
+
+.btn-save-profil:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .profil-card {
+    padding: 24px;
+  }
+  .profil-form .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}

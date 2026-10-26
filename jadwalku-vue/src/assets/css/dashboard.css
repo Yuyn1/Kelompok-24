@@ -1,0 +1,1654 @@
+/* Gaya halaman ini di-namespace dengan wrapper .page-dashboard agar tidak bentrok dengan halaman lain (SPA). */
+/* ================= DASHBOARD STYLES ================= */
+.page-dashboard, .page-dashboard * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.page-dashboard {
+    background-color: #F8FAFC;
+    color: #0F172A;
+}
+
+.page-dashboard .app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Kiri */
+.page-dashboard .sidebar {
+    width: 260px;
+    background-color: #0F172A;
+    color: #94A3B8;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.page-dashboard .sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 8px 24px 8px;
+    border-bottom: 1px solid #1E293B;
+}
+
+.page-dashboard .brand-icon {
+    font-size: 20px;
+}
+
+.page-dashboard .brand-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.page-dashboard .sidebar-menu {
+    list-style: none;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.page-dashboard .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    color: #94A3B8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.page-dashboard .menu-item:hover, .page-dashboard .menu-item.active {
+    background-color: #2563EB;
+    color: #FFFFFF;
+}
+
+.page-dashboard .sidebar-section-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #64748B;
+    margin: 24px 8px 8px 8px;
+}
+
+.page-dashboard .sidebar-filter {
+    padding: 0 8px;
+}
+
+.page-dashboard .semester-select {
+    width: 100%;
+    padding: 10px;
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    color: #FFFFFF;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+}
+
+.page-dashboard .category-list {
+    list-style: none;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.page-dashboard .category-list li {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #CBD5E1;
+}
+
+.page-dashboard .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.page-dashboard .dot.purple { background-color: #8B5CF6; }
+.page-dashboard .dot.blue { background-color: #3B82F6; }
+.page-dashboard .dot.green { background-color: #10B981; }
+
+.page-dashboard .count {
+    margin-left: auto;
+    background-color: #1E293B;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    color: #94A3B8;
+}
+
+.page-dashboard .sidebar-conflict-box {
+    background-color: #1E293B;
+    border-radius: 12px;
+    padding: 14px;
+    margin-top: auto;
+    border: 1px solid #334155;
+}
+
+.page-dashboard .conflict-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+}
+
+.page-dashboard .conflict-desc {
+    font-size: 11px;
+    color: #94A3B8;
+    line-height: 1.4;
+}
+
+/* Konten Utama */
+.page-dashboard .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Top Navbar */
+.page-dashboard .top-navbar {
+    background-color: #FFFFFF;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.page-dashboard .search-container {
+    position: relative;
+    width: 320px;
+}
+
+.page-dashboard .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+}
+
+.page-dashboard .search-input {
+    width: 100%;
+    padding: 9px 12px 9px 36px;
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+}
+
+.page-dashboard .user-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.page-dashboard .notif-btn {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.page-dashboard .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-dashboard .user-avatar {
+    width: 36px;
+    height: 36px;
+    background-color: #0F172A;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-dashboard .user-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0F172A;
+}
+
+.page-dashboard .user-role {
+    font-size: 11px;
+    color: #64748B;
+}
+
+/* Dashboard Body */
+.page-dashboard .dashboard-body {
+    padding: 32px;
+    max-width: 1350px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.page-dashboard .welcome-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.page-dashboard .welcome-sub {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2563EB;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.page-dashboard .welcome-banner h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 4px;
+}
+
+.page-dashboard .welcome-banner p {
+    font-size: 13px;
+    color: #64748B;
+}
+
+.page-dashboard .action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.page-dashboard .btn-outline {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    color: #1E293B;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.page-dashboard .btn-primary {
+    background: #2563EB;
+    color: #FFFFFF;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Stats Row */
+.page-dashboard .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.page-dashboard .stat-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.page-dashboard .stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.page-dashboard .purple-bg { background: #EDE9FE; }
+.page-dashboard .green-bg { background: #D1FAE5; }
+.page-dashboard .orange-bg { background: #FEF3C7; }
+
+.page-dashboard .stat-num {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.page-dashboard .stat-label {
+    font-size: 12px;
+    color: #64748B;
+}
+
+.page-dashboard .stat-badge {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.page-dashboard .purple-text { background: #F3E8FF; color: #7C3AED; }
+.page-dashboard .green-text { background: #ECFDF5; color: #059669; }
+.page-dashboard .orange-text { background: #FFFBEB; color: #D97706; }
+
+/* Calendar Layout Grid */
+.page-dashboard .calendar-layout-grid {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 24px;
+}
+
+.page-dashboard .calendar-card-main {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.page-dashboard .cal-main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-dashboard .month-navigation {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page-dashboard .month-navigation h2 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.page-dashboard .nav-arrow {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.page-dashboard .cal-view-switches {
+    display: flex;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 3px;
+}
+
+.page-dashboard .view-btn {
+    background: transparent;
+    border: none;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748B;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.page-dashboard .view-btn.active {
+    background: #FFFFFF;
+    color: #0F172A;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Monthly Table */
+.page-dashboard .monthly-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.page-dashboard .monthly-table th {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748B;
+    text-align: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.page-dashboard .monthly-table td {
+    border: 1px solid #E2E8F0;
+    height: 90px;
+    vertical-align: top;
+    padding: 6px;
+    width: 14.28%;
+}
+
+.page-dashboard .date-num {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1E293B;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.page-dashboard .today-circle {
+    background: #2563EB;
+    color: #FFFFFF;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+}
+
+.page-dashboard .text-muted { color: #CBD5E1; }
+
+.page-dashboard .event-pill {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 6px;
+    border-radius: 4px;
+    margin-bottom: 3px;
+    line-height: 1.2;
+}
+
+.page-dashboard .purple-pill { background: #F3E8FF; color: #7C3AED; }
+.page-dashboard .blue-pill { background: #EFF6FF; color: #2563EB; }
+.page-dashboard .green-pill { background: #ECFDF5; color: #059669; }
+.page-dashboard .orange-pill { background: #FFFBEB; color: #D97706; }
+.page-dashboard .red-pill { background: #FEF2F2; color: #DC2626; }
+
+/* Right Sidebar Panel */
+.page-dashboard .right-sidebar-panel {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 20px;
+    height: fit-content;
+}
+
+.page-dashboard .upcoming-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.page-dashboard .upcoming-header h3 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.page-dashboard .badge-count {
+    background: #F1F5F9;
+    font-size: 11px;
+    color: #64748B;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.page-dashboard .upcoming-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    align-items: flex-start;
+}
+
+.page-dashboard .up-date {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #2563EB;
+    text-align: center;
+    min-width: 45px;
+}
+
+.page-dashboard .up-date small {
+    font-size: 9px;
+    color: #64748B;
+    font-weight: normal;
+}
+
+.page-dashboard .up-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #0F172A;
+    margin-bottom: 2px;
+}
+
+.page-dashboard .up-location {
+    font-size: 11px;
+    color: #64748B;
+}
+
+.page-dashboard .ai-suggestion-box {
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 10px;
+    padding: 14px;
+    margin-top: 20px;
+}
+
+.page-dashboard .ai-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1E40AF;
+    margin-bottom: 4px;
+}
+
+.page-dashboard .ai-desc {
+    font-size: 11px;
+    color: #1E3A8A;
+    line-height: 1.4;
+}
+
+/* Styling Tambahan untuk SPA & Modal */
+.page-dashboard .content-section {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-dashboard .btn-logout-sidebar {
+    width: 100%;
+    background-color: #1E293B;
+    color: #F87171;
+    border: 1px solid #334155;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.page-dashboard .btn-logout-sidebar:hover {
+    background-color: #7F1D1D;
+    color: #FFFFFF;
+}
+
+/* Modal Popup Overlay */
+.page-dashboard .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.page-dashboard .modal-card {
+    background-color: #FFFFFF;
+    padding: 24px;
+    border-radius: 12px;
+    width: 420px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tombol Hapus Khusus di Tabel Agenda */
+.page-dashboard .btn-delete {
+    background-color: #FEF2F2;
+    color: #DC2626;
+    border: 1px solid #FCA5A5;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.page-dashboard .btn-delete:hover {
+    background-color: #DC2626;
+    color: #FFFFFF;
+    border-color: #DC2626;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.2);
+}
+
+/* Tombol Close Notifikasi */
+.page-dashboard .btn-close-notif {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    padding: 4px;
+}
+
+.page-dashboard .btn-close-notif:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Transisi Smooth Kalender */
+.page-dashboard #calendarTableBody {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-dashboard #calendarTableBody.fade-out {
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+/* Styling Dropdown Semester Filter */
+.page-dashboard .semester-select {
+    width: 100%;
+    background-color: #1E293B;
+    color: #F8FAFC;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-dashboard .semester-select:focus {
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.page-dashboard .semester-select option {
+    background-color: #1E293B;
+    color: #F8FAFC;
+    padding: 8px;
+}
+
+/* STYLING MODAL DETAIL AGENDA */
+.page-dashboard .modal-detail-card {
+    max-width: 580px;
+    width: 90%;
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #FFFFFF;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.page-dashboard .modal-detail-header {
+    background: #0F172A;
+    color: #FFFFFF;
+    padding: 24px;
+    position: relative;
+}
+
+.page-dashboard .modal-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.page-dashboard .badge-category {
+    background: #1E293B;
+    color: #60A5FA;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #334155;
+}
+
+.page-dashboard .btn-close-circle {
+    background: #1E293B;
+    border: none;
+    color: #94A3B8;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+
+.page-dashboard .btn-close-circle:hover {
+    background: #334155;
+    color: #FFFFFF;
+}
+
+.page-dashboard .modal-detail-header h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #F8FAFC;
+    margin-bottom: 4px;
+}
+
+.page-dashboard .modal-detail-header p {
+    font-size: 13px;
+    color: #94A3B8;
+    margin: 0;
+}
+
+.page-dashboard .modal-detail-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-height: 65vh;
+    overflow-y: auto;
+}
+
+.page-dashboard .detail-grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.page-dashboard .detail-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page-dashboard .detail-box-icon {
+    font-size: 20px;
+}
+
+.page-dashboard .detail-label {
+    font-size: 11px;
+    color: #64748B;
+    display: block;
+    font-weight: 500;
+}
+
+.page-dashboard .detail-value {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.page-dashboard .detail-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-top: 1px dashed #E2E8F0;
+    padding-top: 14px;
+}
+
+.page-dashboard .detail-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.page-dashboard .info-icon {
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.page-dashboard .info-label {
+    font-size: 11px;
+    color: #64748B;
+    display: block;
+}
+
+.page-dashboard .info-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1E293B;
+}
+
+.page-dashboard .detail-note-box {
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+
+.page-dashboard .note-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2563EB;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.page-dashboard .detail-note-box p {
+    font-size: 12px;
+    color: #1E3A8A;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.page-dashboard .detail-status-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+}
+
+.page-dashboard .status-safe {
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    color: #065F46;
+}
+
+.page-dashboard .status-warning {
+    background: #FEF2F2;
+    border: 1px solid #FCA5A5;
+    color: #991B1B;
+}
+
+.page-dashboard .detail-status-box strong {
+    font-size: 13px;
+    display: block;
+}
+
+.page-dashboard .detail-status-box p {
+    font-size: 11px;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.page-dashboard .modal-detail-footer {
+    padding: 16px 24px;
+    background: #F8FAFC;
+    border-top: 1px solid #E2E8F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-dashboard .btn-ghost-danger {
+    background: transparent;
+    border: none;
+    color: #DC2626;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.page-dashboard .btn-ghost-danger:hover {
+    background: #FEF2F2;
+}
+
+.page-dashboard .footer-right-btns {
+    display: flex;
+    gap: 10px;
+}
+
+/* ==========================================
+   EFEK HOVER & INDIKATOR KLIK EVENT PILL
+   ========================================== */
+.page-dashboard .event-pill {
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.2s ease, 
+                filter 0.2s ease;
+    position: relative;
+    user-select: none;
+}
+
+/* Efek saat kursor diarahkan ke event pill */
+.page-dashboard .event-pill:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+}
+
+/* Efek saat event pill ditekan */
+.page-dashboard .event-pill:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Indikator ikon kecil halus di sudut kanan saat di-hover */
+.page-dashboard .event-pill::after {
+    content: "🔍";
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    font-size: 9px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.page-dashboard .event-pill:hover::after {
+    opacity: 0.8;
+}
+
+/* ==========================================
+   ANIMASI SMOOTH MODAL POP-IN
+   ========================================== */
+@keyframes modalPopIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Terapkan animasi saat modal dimunculkan */
+.page-dashboard .modal-overlay .modal-detail-card {
+    animation: modalPopIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ==========================================
+   ANIMASI SLIDE-UP MODAL DETAIL (DARI BAWAH LAYAR)
+   ========================================== */
+
+/* Mengatur overlay agar siap meluncurkan modal dari dasar layar */
+.page-dashboard #modalDetailAgenda {
+    align-items: flex-end; /* Memosisikan modal di area bawah layar */
+    justify-content: center;
+    padding-bottom: 0;
+}
+
+/* Penyesuaian bentuk kartu saat meluncur dari bawah */
+.page-dashboard #modalDetailAgenda .modal-detail-card {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+}
+
+/* Di layar komputer/desktop, beri sedikit jarak agar tidak menempel rapat di tepi bawah */
+@media (min-width: 640px) {
+    .page-dashboard #modalDetailAgenda {
+        align-items: center; /* Rata tengah di komputer */
+    }
+    .page-dashboard #modalDetailAgenda .modal-detail-card {
+        border-radius: 16px; /* Sudut melengkung penuh di desktop */
+    }
+}
+
+/* Keyframe Animasi Meluncur dari Luar Bawah Layar */
+@keyframes slideUpFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh); /* Mulai dari bawah luar layar */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Berhenti di posisi normal */
+    }
+}
+
+/* Jalankan animasi saat modal dibuka (display: flex) */
+.page-dashboard #modalDetailAgenda .modal-detail-card {
+    animation: slideUpFromBottom 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Transisi Smooth Antarhalaman */
+.page-dashboard {
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out;
+}
+
+/* ==========================================
+   RESPONSIF - DASHBOARD
+   ========================================== */
+/* Elemen khusus mobile: tersembunyi di desktop */
+.page-dashboard .menu-toggle {
+    display: none;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.page-dashboard .sidebar-backdrop {
+    display: none;
+}
+
+/* Tablet & HP: sidebar menjadi drawer geser */
+@media (max-width: 900px) {
+    .page-dashboard .app-container {
+        display: block;
+    }
+
+    .page-dashboard .main-content {
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+    }
+
+    .page-dashboard .menu-toggle {
+        display: inline-flex;
+    }
+
+    .page-dashboard .top-navbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        padding: 10px 16px;
+        gap: 10px;
+    }
+
+    .page-dashboard .search-container {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+    }
+
+    .page-dashboard .user-nav-actions {
+        gap: 10px;
+    }
+
+    .page-dashboard .user-info {
+        display: none;
+    }
+
+    .page-dashboard .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 280px;
+        max-width: 85vw;
+        z-index: 1100;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        visibility: hidden;
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s;
+    }
+
+    .page-dashboard.sidebar-open .sidebar {
+        transform: none;
+        visibility: visible;
+        box-shadow: 8px 0 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .page-dashboard .sidebar-backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.5);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        z-index: 1050;
+    }
+
+    .page-dashboard.sidebar-open .sidebar-backdrop {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .page-dashboard.sidebar-open {
+        overflow: hidden;
+    }
+
+    .page-dashboard .dashboard-body {
+        padding: 20px 16px;
+    }
+
+    .page-dashboard .calendar-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Banner sambutan */
+    .page-dashboard .welcome-banner {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .page-dashboard .welcome-banner h1 {
+        font-size: 22px;
+    }
+
+    .page-dashboard .action-buttons {
+        width: 100%;
+    }
+
+    .page-dashboard .action-buttons > button {
+        flex: 1;
+        padding: 12px 10px;
+    }
+
+    .page-dashboard .welcome-banner > .btn-primary {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* Kartu statistik */
+    .page-dashboard .stats-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .page-dashboard .stat-card {
+        padding: 14px 16px;
+    }
+
+    /* Kalender bulanan: 7 kolom tetap muat, teks agenda dipotong dengan elipsis */
+    .page-dashboard .calendar-card-main {
+        padding: 14px;
+    }
+
+    .page-dashboard .cal-main-header {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .page-dashboard .nav-arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .page-dashboard .view-btn {
+        padding: 8px 12px;
+    }
+
+    .page-dashboard .monthly-table {
+        table-layout: fixed;
+    }
+
+    .page-dashboard .monthly-table th {
+        font-size: 10px;
+    }
+
+    .page-dashboard .monthly-table td {
+        height: 74px;
+        padding: 3px;
+    }
+
+    .page-dashboard .date-num {
+        font-size: 11px;
+        margin-bottom: 2px;
+    }
+
+    .page-dashboard .today-circle {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+
+    .page-dashboard .event-pill {
+        font-size: 9px;
+        padding: 3px 4px;
+        border-radius: 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .page-dashboard .event-pill small {
+        font-size: 8px;
+    }
+
+    .page-dashboard .event-pill::after {
+        display: none;
+    }
+
+    .page-dashboard .event-pill:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    /* Tabel Daftar Agenda: geser horizontal di dalam kartunya */
+    .page-dashboard #section-agenda .calendar-card-main {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .page-dashboard #section-agenda .monthly-table {
+        table-layout: auto;
+        min-width: 620px;
+    }
+
+    .page-dashboard #section-agenda .monthly-table th,
+    .page-dashboard #section-agenda .monthly-table td {
+        height: auto;
+        width: auto;
+        padding: 10px 8px;
+        white-space: nowrap;
+    }
+
+    .page-dashboard #section-agenda .monthly-table th {
+        padding-bottom: 10px;
+        font-size: 11px;
+    }
+
+    .page-dashboard #agendaTableBody .event-pill {
+        font-size: 11px;
+        padding: 4px 8px;
+        overflow: visible;
+    }
+
+    /* Notifikasi */
+    .page-dashboard #section-notifikasi .calendar-card-main {
+        padding: 14px !important;
+    }
+
+    /* Modal */
+    .page-dashboard .modal-overlay {
+        padding: 12px;
+    }
+
+    .page-dashboard .modal-card {
+        width: 100%;
+        max-width: 420px;
+        max-height: 92vh;
+        overflow-y: auto;
+    }
+
+    /* 16px mencegah iOS memperbesar layar otomatis saat input difokus */
+    .page-dashboard input,
+    .page-dashboard select {
+        font-size: 16px;
+    }
+
+    .page-dashboard .modal-card .search-input {
+        padding: 11px 12px 11px 12px;
+    }
+
+    /* Modal detail: bottom sheet selebar layar */
+    .page-dashboard #modalDetailAgenda {
+        padding: 0;
+    }
+
+    .page-dashboard .modal-detail-card {
+        width: 100%;
+        max-width: none;
+        max-height: 92vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .page-dashboard .modal-detail-header {
+        padding: 18px 16px;
+    }
+
+    .page-dashboard .modal-detail-body {
+        padding: 16px;
+        max-height: none;
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    .page-dashboard .detail-grid-two {
+        grid-template-columns: 1fr;
+    }
+
+    .page-dashboard .modal-detail-footer {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        gap: 8px;
+        padding: 12px 16px;
+    }
+
+    .page-dashboard .footer-right-btns {
+        width: 100%;
+    }
+
+    .page-dashboard .footer-right-btns button {
+        flex: 1;
+        padding: 12px;
+    }
+
+    .page-dashboard .btn-ghost-danger {
+        text-align: center;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .page-dashboard .dashboard-body {
+        padding: 16px 12px;
+    }
+
+    .page-dashboard .stat-badge {
+        font-size: 10px;
+    }
+}
+
+/* Sidebar Kiri - Dikunci agar pas di layar dan tidak bisa di-scroll */
+.page-dashboard .sidebar {
+    width: 260px;
+    height: 100vh; /* Kunci tinggi penuh sesuai layar */
+    max-height: 100vh;
+    background-color: #0F172A;
+    color: #94A3B8;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    overflow: hidden; /* Mencegah kemunculan scrollbar di sidebar */
+    flex-shrink: 0;
+}
+
+/* Styling Utama Dashboard & Kalender */
+.category-hover-item:hover {
+  background-color: #1E293B;
+  color: #FFFFFF;
+  transition: background-color 0.2s ease;
+}
+
+.calendar-fade-transition {
+  animation: smoothFadeSlide 0.25s ease-in-out forwards;
+}
+
+@keyframes smoothFadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efek Hover & Transisi Tombol Aksi Detail Agenda */
+.btn-action-delete {
+  flex: 1;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #FEF2F2;
+  color: #DC2626;
+  border: 1px solid #FCA5A5;
+  transition: all 0.2s ease;
+}
+.btn-action-delete:hover {
+  background: #FEE2E2;
+  border-color: #EF4444;
+}
+
+.btn-action-edit {
+  flex: 1;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #EFF6FF;
+  color: #2563EB;
+  border: 1px solid #BFDBFE;
+  transition: all 0.2s ease;
+}
+.btn-action-edit:hover {
+  background: #DBEAFE;
+  border-color: #3B82F6;
+}
+
+.btn-action-close {
+  flex: 1.2;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #2563EB;
+  color: #FFFFFF;
+  border: 1px solid #2563EB;
+  transition: all 0.2s ease;
+}
+.btn-action-close:hover {
+  background: #1D4ED8;
+  border-color: #1D4ED8;
+}
+.user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0F172A;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Membuat gambar tetap proporsional dan mengisi lingkaran tanpa gepeng */
+}
+/* Perbaikan wadah profil agar elemen anak tertata rapi */
+.sidebar .user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden; /* Mencegah elemen keluar dari batas */
+  width: 100%;
+}
+
+/* Lingkaran Avatar agar tidak gepeng dan tidak menyusut */
+.sidebar .user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0; /* Menjaga ukuran lingkaran tetap bulat sempurna */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0F172A;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.sidebar .user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Area teks nama agar teks panjang menyesuaikan atau terpotong rapi */
+.sidebar .user-profile > div:not(.user-avatar) {
+  min-width: 0; /* Penting agar flexbox anak bisa mengecil dan teks terpotong dengan benar */
+  flex: 1;
+}
+
+.sidebar .user-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #FFFFFF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Membuat teks email yang panjang menjadi berakhiran titik-titik (...) */
+}
+
+.sidebar .user-role {
+  font-size: 11px;
+  color: #94A3B8;
+}
+
+/* ===== Pencarian dengan saran ===== */
+.page-dashboard .search-input {
+    padding-right: 32px;
+}
+
+.page-dashboard .search-input:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    background: #FFFFFF;
+}
+
+.page-dashboard .search-clear {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #E2E8F0;
+    border: none;
+    color: #475569;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 10px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.page-dashboard .search-suggest {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px -8px rgba(15, 23, 42, 0.25);
+    list-style: none;
+    margin: 0;
+    padding: 6px;
+    z-index: 200;
+}
+
+.page-dashboard .search-empty {
+    padding: 14px;
+    font-size: 12px;
+    color: #64748B;
+}
+
+.page-dashboard .suggest-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.page-dashboard .suggest-item.active {
+    background: #EFF6FF;
+}
+
+.page-dashboard .suggest-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #F1F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.page-dashboard .suggest-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.page-dashboard .suggest-main {
+    font-size: 13px;
+    color: #0F172A;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.page-dashboard .suggest-main mark {
+    background: transparent;
+    color: #2563EB;
+    font-weight: 700;
+}
+
+.page-dashboard .suggest-text small {
+    font-size: 11px;
+    color: #94A3B8;
+}
+
+.page-dashboard .search-chip {
+    margin-bottom: 16px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    color: #1E3A8A;
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.page-dashboard .search-chip button {
+    background: transparent;
+    border: none;
+    color: #2563EB;
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Agar dropdown menimpa isi halaman di desktop (di mobile navbar sudah sticky z-index 50) */
+@media (min-width: 901px) {
+    .page-dashboard .top-navbar {
+        position: relative;
+        z-index: 60;
+    }
+}
